@@ -32,8 +32,8 @@ jobs:
         run: python main.py
       - name: Git push
         run: |
-          git config user.name PtPrashantTripathi
-          git config user.email ptprashanttripathi@outlook.com
+          git config user.name cubillosxy
+          git config user.email cubillosxy@outlook.com
           git add ./json/repos.json
           git commit -m "[PanditBot] Updating Repos Data $(date +%Y-%m-%d_%H-%M-%S)"
           git push --quiet

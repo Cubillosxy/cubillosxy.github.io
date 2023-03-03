@@ -1,5 +1,5 @@
 ##Code of Conduct
-All participants of Pt. Prashant Tripathi are expected to abide by our Code of Conduct, both online and during in-person events that are hosted and/or associated with Pt. Prashant Tripathi.
+All participants of Edwin Cubillos are expected to abide by our Code of Conduct, both online and during in-person events that are hosted and/or associated with Edwin Cubillos.
 
 ##The Pledge
 In the interest of fostering an open and welcoming environment, we pledge to make participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.

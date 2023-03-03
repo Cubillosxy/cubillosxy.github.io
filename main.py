@@ -33,11 +33,13 @@ colors = getjson(
 
 # all the repos list which i want to show on website
 repos_list = [
-    "vedic-lang/vedic", "vedicscriptures/bhagavad-gita-api",
-    "PtPrashantTripathi/IPL-2020-Prediction", "PtPrashantTripathi/linkpe",
-    "PtPrashantTripathi/movieinfo", "PtPrashantTripathi/Shree-Ganesh",
-    "PtPrashantTripathi/Cloud-Storage-System", "PtPrashantTripathi/Adhyatma",
-    "PtPrashantTripathi/php-social-networking-site"
+    "Cubillosxy/MYO-PYTHON-BEBOP",
+    "Cubillosxy/APP-CMplay",
+    "Cubillosxy/Lord-Trosky",
+    "Cubillosxy/playwords",
+    "Cubillosxy/flask-network",
+    "Cubillosxy/skype2slack",
+    "Cubillosxy/hand-solo-quasar",
 ]
 
 # execuation timer
@@ -50,21 +52,24 @@ repos_data = []
 for repo in repos_list:
     rdata = getjson(f'https://api.github.com/repos/{repo}')
     banner = getBanner(f'https://github.com/{repo}')
-    data = {
-        "name": rdata["name"],
-        "url": rdata["html_url"],
-        "description": rdata["description"],
-        "banner": banner,
-        "color":
-        colors[rdata["language"]]["color"] if rdata["language"] else '',
-        "lang": rdata["language"],
-        "date": rdata["created_at"],
-        "stars": rdata["stargazers_count"],
-        "forks": rdata["forks"],
-        "generatedOn": now
-    }
-    repos_data.append(data)
-    print(f"{repo} done\t--- {time.time() - start_time} seconds ---")
+    try:
+        data = {
+            "name": rdata["name"],
+            "url": rdata["html_url"],
+            "description": rdata["description"],
+            "banner": banner,
+            "color":
+            colors[rdata["language"]]["color"] if rdata["language"] else '',
+            "lang": rdata["language"],
+            "date": rdata["created_at"],
+            "stars": rdata["stargazers_count"],
+            "forks": rdata["forks"],
+            "generatedOn": now
+        }
+        repos_data.append(data)
+        print(f"{repo} done\t--- {time.time() - start_time} seconds ---")
+    except KeyError:
+        print('error: perphaps this repo is private')
 
 # Serializing json
 json_data = json.dumps(repos_data, indent=4)
