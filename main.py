@@ -35,11 +35,11 @@ colors = getjson(
 repos_list = [
     "Cubillosxy/MYO-PYTHON-BEBOP",
     "Cubillosxy/APP-CMplay",
-    "Cubillosxy/Lord-Trosky",
+    #"Cubillosxy/Lord-Trosky",
     "Cubillosxy/playwords",
-    "Cubillosxy/flask-network",
-    "Cubillosxy/skype2slack",
-    "Cubillosxy/hand-solo-quasar",
+    #"Cubillosxy/flask-network",
+    #"Cubillosxy/skype2slack",
+    #"Cubillosxy/hand-solo-quasar",
 ]
 
 # execuation timer
