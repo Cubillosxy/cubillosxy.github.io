@@ -1,5 +1,29 @@
 [
     {
+        "name": "ticket-filter-AI",
+        "url": "https://github.com/Cubillosxy/ticket-filter-AI",
+        "description": "AI-powered ticket selector and filter system using Python.",
+        "banner": "https://opengraph.githubassets.com/1/Cubillosxy/ticket-filter-AI",
+        "color": "#3572A5",
+        "lang": "Python",
+        "date": "2025-12-28T13:06:24Z",
+        "stars": 0,
+        "forks": 0,
+        "generatedOn": "2026-03-26"
+    },
+    {
+        "name": "Ready-dev-one-AI",
+        "url": "https://github.com/Cubillosxy/Ready-dev-one-AI",
+        "description": "AI assistant – Integrate AI into your development workflow.",
+        "banner": "https://opengraph.githubassets.com/1/Cubillosxy/Ready-dev-one-AI",
+        "color": "#3572A5",
+        "lang": "Python",
+        "date": "2025-12-23T21:10:22Z",
+        "stars": 1,
+        "forks": 0,
+        "generatedOn": "2026-03-26"
+    },
+    {
         "name": "MYO-PYTHON-BEBOP",
         "url": "https://github.com/Cubillosxy/MYO-PYTHON-BEBOP",
         "description": "Program developed for fly  bebop drone, it integrate de Myo armband and Bebop on python.",
@@ -10,6 +34,18 @@
         "stars": 12,
         "forks": 1,
         "generatedOn": "2023-03-02 23:25:41.072255"
+    },
+    {
+        "name": "VaultTecInventory",
+        "url": "https://github.com/Cubillosxy/VaultTecInventory",
+        "description": "Flask API & React inventory management system.",
+        "banner": "https://opengraph.githubassets.com/1/Cubillosxy/VaultTecInventory",
+        "color": "#3572A5",
+        "lang": "Python",
+        "date": "2025-09-27T16:24:49Z",
+        "stars": 0,
+        "forks": 0,
+        "generatedOn": "2026-03-26"
     },
     {
         "name": "APP-CMplay",
