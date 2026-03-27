@@ -50,7 +50,7 @@ img { max-width: 100%; height: auto; }
 
 /* ===================== LAYOUT ===================== */
 .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
-.section { padding: 100px 0; position: relative; }
+.section { padding: 100px 0; position: relative; z-index: 1; }
 .section-title {
   font-size: 14px;
   font-weight: 600;
@@ -168,6 +168,16 @@ img { max-width: 100%; height: auto; }
   background: radial-gradient(circle, rgba(139, 92, 246, 0.06) 0%, transparent 70%);
   pointer-events: none;
 }
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+.hero #particles-js { pointer-events: auto; }
 .hero-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -533,7 +543,22 @@ img { max-width: 100%; height: auto; }
 }
 
 /* ===================== PROJECTS ===================== */
-.projects-section { background: var(--bg-secondary); }
+.projects-section { background: transparent; position: relative; }
+.projects-section .section-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--bg-secondary);
+  z-index: 0;
+}
+#three-js-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.4;
+}
+.projects-section .container { position: relative; z-index: 1; }
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
