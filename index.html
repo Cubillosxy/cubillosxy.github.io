@@ -506,6 +506,113 @@
     </div>
   </section>
 
+  <!-- ==================== GAMES SIDE PANEL (LEFT) ==================== -->
+  <button class="games-fab hidden" id="gamesFab" aria-label="Open Games">
+    <span class="games-fab-icon">🎮</span>
+  </button>
+
+  <div class="games-overlay open" id="gamesOverlay"></div>
+
+  <aside class="games-panel open" id="gamesPanel">
+    <button class="games-panel-collapse" id="gamesCollapseBtn" aria-label="Collapse Games">
+      <span class="collapse-arrow-games">‹</span>
+    </button>
+    <div class="games-panel-inner">
+      <div class="news-panel-header">
+        <h3 class="news-panel-title">🕹️ Arcade Mini-Games</h3>
+      </div>
+      <div class="games-tabs" id="gamesTabs">
+        <button class="games-tab active" data-game="menu">🎮 Menu</button>
+        <button class="games-tab" data-game="bot">Are you a bot?</button>
+        <button class="games-tab" data-game="triki">Triki</button>
+        <button class="games-tab" data-game="pingpong">Ping Pong</button>
+      </div>
+
+      <div class="games-panel-body">
+        <!-- MAIN MENU CONTAINER -->
+        <div id="game-menu" class="game-container active">
+
+          <div class="game-card" onclick="openGameTab('bot')">
+            <div class="game-card-icon">🤖🕵️</div>
+            <div class="game-card-info">
+              <h4>Are you a bot?</h4>
+              <p>Pass the reverse CAPTCHA. Think like a machine!</p>
+            </div>
+            <button class="game-card-btn">Play<br>Bot Test</button>
+          </div>
+
+          <div class="game-card" onclick="openGameTab('triki')">
+            <div class="game-card-icon">❌⭕</div>
+            <div class="game-card-info">
+              <h4>Triki <br> (Tic-Tac-Toe)</h4>
+              <p>Classic 3x3 strategy game</p>
+            </div>
+            <button class="game-card-btn">Play<br>Triki</button>
+          </div>
+
+          <div class="game-card" onclick="openGameTab('pingpong')">
+            <div class="game-card-icon">🏓🤖</div>
+            <div class="game-card-info">
+              <h4>AI Ping Pong</h4>
+              <p>Classic arcade game against an AI.</p>
+            </div>
+            <button class="game-card-btn">Play<br>Ping Pong</button>
+          </div>
+        </div>
+
+        <!-- BOT CAPTCHA CONTAINER -->
+        <div id="game-bot" class="game-container"
+          style="align-items: center; justify-content: center; text-align: center;">
+          <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 24px;">Are you a bot?</h3>
+          <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 24px; max-width: 300px;">To pass this
+            CAPTCHA, please act like a machine. Read the CODE carefully.</p>
+
+          <div id="botChallengeContainer"
+            style="background: var(--bg-card); padding: 24px; border-radius: 8px; border: 1px solid var(--border-accent); width: 100%; margin-bottom: 20px; text-align: left;">
+            <!-- Challenge injected by JS -->
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; width: 100%;">
+            <input type="number" id="botAnswer1" placeholder="Answer for Challenge 1"
+              style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-subtle); background: rgba(0,0,0,0.3); color: #fff; font-family: inherit; font-size: 16px;">
+            <input type="number" id="botAnswer2" placeholder="Answer for Challenge 2"
+              style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-subtle); background: rgba(0,0,0,0.3); color: #fff; font-family: inherit; font-size: 16px;">
+            <button class="game-card-btn" id="botSubmitBtn" style="margin-top: 8px;">Submit Answers</button>
+          </div>
+
+          <div id="botFeedback" style="font-size: 16px; font-weight: 600; min-height: 24px; margin-bottom: 16px;"></div>
+          <button class="triki-reset" id="botRestartBtn" style="display: none;">Try Another Challenge</button>
+        </div>
+
+        <!-- TRIKI CONTAINER -->
+        <div id="game-triki" class="game-container">
+          <div class="triki-status" id="trikiStatus">Player X's Turn</div>
+          <div class="triki-board" id="trikiBoard">
+            <div class="triki-cell" data-index="0"></div>
+            <div class="triki-cell" data-index="1"></div>
+            <div class="triki-cell" data-index="2"></div>
+            <div class="triki-cell" data-index="3"></div>
+            <div class="triki-cell" data-index="4"></div>
+            <div class="triki-cell" data-index="5"></div>
+            <div class="triki-cell" data-index="6"></div>
+            <div class="triki-cell" data-index="7"></div>
+            <div class="triki-cell" data-index="8"></div>
+          </div>
+          <button class="triki-reset" id="trikiReset">Restart Game</button>
+        </div>
+
+        <!-- PING PONG CONTAINER -->
+        <div id="game-pingpong" class="game-container" style="align-items: center; justify-content: center;">
+          <div class="pingpong-status" id="pingpongStatus">Move your mouse up and down strictly inside the canvas!</div>
+          <canvas id="pingpongCanvas" width="600" height="400"></canvas>
+          <div style="margin-top: 10px; display: flex; gap: 10px;">
+            <button class="triki-reset" id="pingpongStart">Start Match</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
   <!-- ==================== AI NEWS FLOATING PANEL ==================== -->
   <button class="news-fab hidden" id="newsFab" aria-label="AI News">
     <span class="news-fab-icon">📰</span>
@@ -582,9 +689,11 @@
               Reveal Email Address
             </button>
           </div>
-          <a href="https://wa.me/573185229619?text=I%20have%20a%20position%20for%20you" target="_blank" rel="noopener" class="whatsapp-btn">
+          <a href="https://wa.me/573185229619?text=I%20have%20a%20position%20for%20you" target="_blank" rel="noopener"
+            class="whatsapp-btn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.662-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.662-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
             </svg>
             Write me
           </a>
@@ -864,15 +973,100 @@
       }
       tryFetchDLAI(0);
 
-      // Tab clicks
       document.querySelectorAll('.news-tab').forEach(tab => {
         tab.addEventListener('click', () => {
-          document.querySelectorAll('.news-tab').forEach(t => t.classList.remove('active'));
+          if (tab.parentElement.id === 'gamesTabs') return; // Ignore games tabs here
+          document.querySelectorAll('#newsTabs .news-tab').forEach(t => t.classList.remove('active'));
           tab.classList.add('active');
           renderArticles(tab.dataset.feed);
         });
       });
     })();
+
+    // ========== GAMES PANEL & TRIKI LOGIC ==========
+    (function () {
+      const gFab = document.getElementById('gamesFab');
+      const gPanel = document.getElementById('gamesPanel');
+      const gCollapse = document.getElementById('gamesCollapseBtn');
+      const gOverlay = document.getElementById('gamesOverlay');
+
+      const toggleGames = (forceClose = false) => {
+        const isOpen = gPanel.classList.contains('open');
+        if (isOpen || forceClose) {
+          gPanel.classList.remove('open');
+          gOverlay.classList.remove('open');
+          gFab.classList.remove('hidden');
+          setTimeout(() => gFab.style.display = 'flex', 300);
+        } else {
+          gPanel.classList.add('open');
+          gOverlay.classList.add('open');
+          gFab.classList.add('hidden');
+          setTimeout(() => gFab.style.display = 'none', 300);
+        }
+      };
+
+      gFab.addEventListener('click', () => toggleGames());
+      gCollapse.addEventListener('click', () => toggleGames());
+      gOverlay.addEventListener('click', () => toggleGames());
+
+      // Games tabs switching
+      const gTabs = document.querySelectorAll('#gamesTabs .games-tab');
+      const gContainers = document.querySelectorAll('.game-container');
+
+      // Dynamic script loader for games
+      const loadedScripts = new Set();
+      function loadGameScript(scriptName) {
+        if (loadedScripts.has(scriptName)) return;
+        const script = document.createElement('script');
+        script.src = `js/${scriptName}.js`;
+        document.body.appendChild(script);
+        loadedScripts.add(scriptName);
+      }
+
+      window.openGameTab = (gameId) => {
+        gTabs.forEach(t => t.classList.remove('active'));
+        gContainers.forEach(c => c.classList.remove('active'));
+
+        const targetTab = document.querySelector(`#gamesTabs .games-tab[data-game="${gameId}"]`);
+        if (targetTab) targetTab.classList.add('active');
+        document.getElementById('game-' + gameId).classList.add('active');
+
+        // Lazy load scripts when tab is opened
+        if (gameId !== 'menu') {
+          loadGameScript(gameId);
+        }
+      };
+
+      gTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          openGameTab(tab.dataset.game);
+        });
+      });
+
+      // Triki Logic is now in js/triki.js
+    })();
+
+    // ========== INTRO AUTO-COLLAPSE ANIMATION ==========
+    window.addEventListener('load', () => {
+      // Auto-collapse games after 5 seconds
+      setTimeout(() => {
+        const gPanel = document.getElementById('gamesPanel');
+        if (gPanel && gPanel.classList.contains('open')) {
+          const gCollapse = document.getElementById('gamesCollapseBtn');
+          if (gCollapse) gCollapse.click();
+        }
+
+        // Auto-collapse news 0.5 seconds later (5.5s total)
+        setTimeout(() => {
+          const nPanel = document.getElementById('newsPanel');
+          if (nPanel && nPanel.classList.contains('open')) {
+            const nCollapse = document.getElementById('newsPanelCollapse');
+            if (nCollapse) nCollapse.click();
+          }
+        }, 500);
+
+      }, 3000);
+    });
   </script>
 </body>
 
