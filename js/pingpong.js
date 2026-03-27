@@ -225,7 +225,7 @@ window.initPingPong = () => {
     // Prevent duplicate listeners if re-initialized
     const newStartBtn = startBtn.cloneNode(true);
     startBtn.parentNode.replaceChild(newStartBtn, startBtn);
-
+    
     newStartBtn.addEventListener("click", () => {
         if (!isPlaying) {
             isPlaying = true;
@@ -237,6 +237,34 @@ window.initPingPong = () => {
             cancelAnimationFrame(gameLoop);
         }
     });
+
+    const restartBtn = document.getElementById("pingpongRestart");
+    if (restartBtn) {
+        const newRestartBtn = restartBtn.cloneNode(true);
+        restartBtn.parentNode.replaceChild(newRestartBtn, restartBtn);
+        newRestartBtn.addEventListener("click", () => {
+            user.score = 0;
+            computer.score = 0;
+            hitCount = 0;
+            ball.speed = 6;
+            computer.speed = 4;
+            ball.x = canvas.width/2;
+            ball.y = canvas.height/2;
+            
+            // Randomize serve direction
+            ball.velocityX = (Math.random() > 0.5 ? 1 : -1) * 6;
+            ball.velocityY = (Math.random() > 0.5 ? 1 : -1) * 6;
+            
+            updateStatus();
+            render();
+
+            if (!isPlaying) {
+                isPlaying = true;
+                newStartBtn.innerText = "Pause Game";
+                game();
+            }
+        });
+    }
 
     // Initial render
     render();

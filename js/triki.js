@@ -138,7 +138,7 @@ window.initTriki = () => {
     currentPlayer = "X";
     gameState = ["", "", "", "", "", "", "", "", ""];
     statusText.innerHTML = "Your turn";
-    cells.forEach(cell => {
+    document.querySelectorAll('.triki-cell').forEach(cell => {
       cell.innerHTML = "";
       cell.classList.remove('playerX', 'playerO');
     });

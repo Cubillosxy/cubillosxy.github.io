@@ -60,7 +60,7 @@ window.initBotGame = () => {
         <div id="challenge1" style="font-size: 2rem; color: var(--accent-1); margin-top: 4px; font-weight: bold;">${A1} + ${B1}<span style="display:none"> + ${C1}</span></div>
       </div>
       <div>
-        <span style="font-size: 14px; color: var(--text-secondary); font-weight: normal; letter-spacing: normal;">Challenge 2: Inspect my properties</span>
+        <span style="font-size: 14px; color: var(--text-secondary); font-weight: normal; letter-spacing: normal;">Challenge 2: think out the bot ... 👀</span>
         <div id="challenge2" data-real="${botAnswer2}" style="font-size: 2rem; color: var(--accent-2); margin-top: 4px; font-weight: bold;">${A2} + ${B2}</div>
       </div>
     `;
