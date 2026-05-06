@@ -39,6 +39,13 @@ My Portfolio site using Material Design. Mobile First Layout I Fully Responsive
 - SEO Optimized
 - Well documented
 
+### Local development
+
+```bash
+cd cubillosxy.github.io
+python3 -m http.server 8000
+```
+
 ## 💻 Built with (Sources and Credits)
 
 - www.unsplash.com
