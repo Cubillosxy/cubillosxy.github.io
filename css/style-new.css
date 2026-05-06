@@ -322,6 +322,7 @@ img {
   line-height: 1.8;
   color: var(--text-secondary);
   margin-bottom: 32px;
+  text-align: justify;
 }
 
 .hero-actions {
