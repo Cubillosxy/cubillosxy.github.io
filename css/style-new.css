@@ -352,6 +352,33 @@ img {
   transform: scale(1.03);
 }
 
+.hero-dev-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid var(--border-accent);
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  margin-top: 32px;
+  max-width: 500px;
+}
+
+.dev-note-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.dev-note-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.dev-note-text strong {
+  color: var(--accent-3);
+}
+
 .hero-meta {
   display: flex;
   gap: 32px;
@@ -409,6 +436,11 @@ img {
 
   .hero-meta {
     justify-content: center;
+  }
+
+  .hero-dev-note {
+    text-align: left;
+    margin: 32px auto 0;
   }
 }
 
@@ -1684,6 +1716,24 @@ img {
   border-top: 1px solid var(--border-subtle);
   padding: 40px 0;
   text-align: center;
+}
+
+.footer-sticker-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-sticker {
+  display: inline-block;
+  background: var(--gradient-primary);
+  color: #fff;
+  padding: 6px 16px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 100px;
+  box-shadow: var(--shadow-glow);
 }
 
 .footer-inner {
