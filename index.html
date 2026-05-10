@@ -546,7 +546,7 @@
   </section>
 
   <!-- ==================== GAMES SIDE PANEL (LEFT) ==================== -->
-  <button class="games-fab hidden" id="gamesFab" aria-label="Open Games">
+  <button class="games-fab hidden" id="gamesFab" aria-label="Open Games" data-tooltip="Expand Games">
     <span class="games-fab-icon">🎮</span>
   </button>
 
@@ -554,7 +554,14 @@
 
   <aside class="games-panel open" id="gamesPanel">
     <button class="games-panel-collapse" id="gamesCollapseBtn" aria-label="Collapse Games">
-      <span class="collapse-arrow-games">‹</span>
+      <div class="collapse-content">
+        <span class="collapse-text">HIDE</span>
+        <div class="collapse-arrows">
+          <span>‹</span>
+          <span>‹</span>
+          <span>‹</span>
+        </div>
+      </div>
     </button>
     <div class="games-panel-inner">
       <div class="news-panel-header">
@@ -654,13 +661,20 @@
   </aside>
 
   <!-- ==================== AI NEWS FLOATING PANEL ==================== -->
-  <button class="news-fab hidden" id="newsFab" aria-label="AI News">
+  <button class="news-fab hidden" id="newsFab" aria-label="AI News" data-tooltip="Expand News">
     <span class="news-fab-icon">📰</span>
     <span class="news-fab-badge" id="newsBadge"></span>
   </button>
   <aside class="news-panel open" id="newsPanel">
     <button class="news-panel-collapse" id="newsPanelCollapse" aria-label="Collapse panel">
-      <span class="collapse-arrow">›</span>
+      <div class="collapse-content">
+        <span class="collapse-text">HIDE</span>
+        <div class="collapse-arrows">
+          <span>›</span>
+          <span>›</span>
+          <span>›</span>
+        </div>
+      </div>
     </button>
     <div class="news-panel-inner">
       <div class="news-panel-header">
