@@ -1,6 +1,6 @@
-# Work Experience
+# Work Experience | Experiencia Laboral | Historial de Trabajo
 
-Edwin Cubillos has 10+ years of professional software engineering experience across global companies. His career spans from junior embedded systems development to senior AI architecture at scale.
+Edwin Cubillos has 10+ years of professional software engineering experience across global companies. His career (carrera, historial, trayectoria) spans from embedded systems to senior AI architecture. Recent jobs, last positions, current role, trabajo actual, últimos trabajos, posiciones recientes, empresas donde trabajó.
 
 ---
 
@@ -20,7 +20,7 @@ Tech stack: Anthropic LLMs, LangChain, LangSmith, Claude Code, Lovable, Cursor, 
 
 ---
 
-## Storicard / Milabs — AI Engineer (Contractor)
+## Storicard — AI Engineer (Contractor)
 **Apr 2025 – Jan 2026 | Remote**
 Website: https://www.storicard.com
 

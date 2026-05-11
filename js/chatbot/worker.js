@@ -41,13 +41,13 @@ RULES:
 - Use ONLY the provided context and your knowledge. Do not invent facts.
 - If the user asks for the resume or CV, reply EXACTLY with: [ACTION: DOWNLOAD_CV]
 - If the user asks contact using whatsapp reply EXACTLY with: [ACTION: OPEN_WHATSAPP]
+- Dont include the portfolio link in the response cause the user is already in it.
 
 Edwin's contact:
 - Email: cubillos.dev.bk@gmail.com
 - WhatsApp: +573185229619
 - LinkedIn: https://www.linkedin.com/in/cubillosxy
-- GitHub: https://github.com/Cubillosxy
-- Portfolio: https://cubillosxy.github.io`;
+- GitHub: https://github.com/Cubillosxy`;
 
 /**
  * Build a full system prompt with RAG context injected.
@@ -82,13 +82,22 @@ self.addEventListener('message', async ({ data: { text } }) => {
     // 2. Retrieve relevant chunks from the BM25 index
     let ragChunks = [];
     try {
-      ragChunks = await topK(text, 3);
+      ragChunks = await topK(text, 5);
     } catch (ragErr) {
       console.warn('[RAG] retrieval skipped:', ragErr.message);
     }
 
     // 3. Build the dynamic system prompt with injected context
     const systemPrompt = buildSystemPrompt(ragChunks);
+
+    // ── DEBUG (remove when satisfied) ──────────────────────────
+    console.group('[RAG] "' + text + '"');
+    ragChunks.forEach((c, i) =>
+      console.log('[' + i + '] score=' + c.score.toFixed(3) + ' | ' + c.section + '\n    ' + c.text.slice(0, 100))
+    );
+    if (!ragChunks.length) console.warn('⚠️ No chunks retrieved');
+    console.groupEnd();
+    // ──────────────────────────────────────────────────────────
 
     // 4. Build message list for the API call
     const messages = [
