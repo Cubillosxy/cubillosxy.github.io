@@ -2179,3 +2179,126 @@ img {
 .chat-table tr:nth-child(even) td {
   background: rgba(255,255,255,0.03);
 }
+
+/* ── Chat FAB — Unread Badge ── */
+.ai-chat-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--bg-primary, #0d0d14);
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+  z-index: 10;
+}
+.ai-chat-badge.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+/* Subtle pulse ring */
+.ai-chat-badge.visible::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  border: 2px solid #ef4444;
+  animation: badge-ping 1.8s ease-out infinite;
+}
+@keyframes badge-ping {
+  0%   { opacity: 0.7; transform: scale(1); }
+  100% { opacity: 0;   transform: scale(1.9); }
+}
+
+/* ── Scroll Progress Bar ── */
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-1, #7c3aed), var(--accent-2, #06b6d4));
+  z-index: 9999;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px var(--accent-1, #7c3aed);
+}
+
+/* ── Open to Work Badge ── */
+.otw-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  color: #10b981;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+}
+.otw-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  animation: otw-pulse 1.8s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes otw-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* ── Hero Typing Cursor ── */
+.typed-cursor {
+  display: inline-block;
+  animation: blink 0.8s step-end infinite;
+  opacity: 0.7;
+  margin-left: 2px;
+}
+@keyframes blink {
+  0%, 100% { opacity: 0.7; }
+  50%       { opacity: 0; }
+}
+
+/* ── Copy Email ── */
+.email-revealed {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  border-bottom: 1px dashed currentColor;
+  transition: color 0.2s;
+}
+.email-revealed:hover { color: var(--accent-1, #7c3aed); }
+.copy-hint {
+  font-size: 11px;
+  background: var(--accent-1, #7c3aed);
+  color: #fff;
+  padding: 2px 7px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+.email-revealed:hover .copy-hint,
+.email-revealed.copied .copy-hint { opacity: 1; }

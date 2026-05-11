@@ -72,7 +72,17 @@ function renderMarkdown(text) {
   // 7. Inline code  `code`
   html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
 
-  // 8. Remaining line breaks → <br>
+  // 8. Markdown links  [text](url)
+  html = html.replace(/\[([^\]]+)\]\((https?:\/\/[^\)]+)\)/g,
+    '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'
+  );
+
+  // 9. Bare URLs  https://...  (not already inside an href)
+  html = html.replace(/(?<!href=")(https?:\/\/[^\s<"]+)/g,
+    '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
+  );
+
+  // 10. Remaining line breaks → <br>
   html = html.replace(/\n/g, '<br>');
 
   return html;

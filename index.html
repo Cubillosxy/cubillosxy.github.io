@@ -35,8 +35,10 @@
   <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/17167246" />
 
   <!-- Favicons -->
-  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/17167246?s=96&amp;v=4" sizes="96x96" />
-  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/17167246?s=96&amp;v=4" sizes="32x32" />
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/17167246?s=96&amp;v=4"
+    sizes="96x96" />
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/17167246?s=96&amp;v=4"
+    sizes="32x32" />
 
   <link rel="stylesheet" type="text/css" href="css/style-new.css" />
   <!-- Google tag (gtag.js) -->
@@ -91,6 +93,9 @@
 </head>
 
 <body>
+  <!-- Scroll Progress Bar -->
+  <div id="scrollProgress" role="progressbar" aria-label="Page scroll progress"></div>
+
   <!-- ==================== HEADER ==================== -->
   <header class="header" id="header">
     <nav class="nav">
@@ -120,7 +125,7 @@
             Available for opportunities
           </div>
           <h1 class="hero-name">Edwin Cubillos</h1>
-          <p class="hero-title">Software Engineer · AI Engineer</p>
+          <p class="hero-title" id="heroTyped"><span id="heroTypedText"></span><span class="typed-cursor">|</span></p>
           <p class="hero-summary">
             I am a Senior Software Engineer & AI Architect with over a decade of experience building high-scale systems
             for global leaders like Uber, Nokia, and Mercado Libre.<br><br>
@@ -174,6 +179,11 @@
         <div class="hero-photo-wrap">
           <img class="hero-photo" src="https://avatars.githubusercontent.com/u/17167246?s=460&v=4" alt="Edwin Cubillos"
             loading="eager" />
+          <!-- Open-to-work badge — controlled by OPEN_TO_WORK flag in the inline script below -->
+          <div class="otw-badge" id="otwBadge">
+            <span class="otw-dot"></span>
+            Open to Work
+          </div>
         </div>
       </div>
     </div>
@@ -977,8 +987,24 @@
     function revealEmail() {
       const container = document.getElementById('emailReveal');
       const parts = ['cubillos.dev', '.bk', '@', 'gmail', '.com'];
-      const email = parts[0] + parts[1] + parts[2] + parts[3] + parts[4];
-      container.innerHTML = `<a href="mailto:${email}" class="email-revealed">📧 ${email}</a>`;
+      const email = parts.join('');
+      container.innerHTML =
+        '<span class="email-revealed" id="emailCopyBtn" title="Click to copy" onclick="copyEmail(this, \'' + email + '\')">' +
+        '\uD83D\uDCE7 ' + email +
+        '<span class="copy-hint">Copy</span>' +
+        '</span>';
+    }
+
+    function copyEmail(el, email) {
+      navigator.clipboard.writeText(email).then(() => {
+        const hint = el.querySelector('.copy-hint');
+        hint.textContent = 'Copied!';
+        el.classList.add('copied');
+        setTimeout(() => {
+          hint.textContent = 'Copy';
+          el.classList.remove('copied');
+        }, 2000);
+      });
     }
 
     // ========== ACTIVE NAV LINK ==========
@@ -998,6 +1024,51 @@
         }
       });
     });
+
+    // ========== OPEN TO WORK BADGE ==========
+    // 👇 Set to false when Edwin is no longer available
+    const OPEN_TO_WORK = true;
+    const otwBadge = document.getElementById('otwBadge');
+    if (otwBadge) otwBadge.style.display = OPEN_TO_WORK ? 'flex' : 'none';
+
+    // ========== SCROLL PROGRESS BAR ==========
+    const progressBar = document.getElementById('scrollProgress');
+    if (progressBar) {
+      window.addEventListener('scroll', () => {
+        const total = document.documentElement.scrollHeight - window.innerHeight;
+        const current = window.scrollY;
+        progressBar.style.width = (total > 0 ? (current / total) * 100 : 0) + '%';
+      }, { passive: true });
+    }
+
+    // ========== HERO TYPING ANIMATION ==========
+    (function () {
+      const phrases = [
+        'Software Engineer',
+        'AI Engineer',
+        'AI Architect',
+        'Founder · Builder',
+        'Open to Work 🟢',
+      ];
+      const el = document.getElementById('heroTypedText');
+      if (!el) return;
+      let pi = 0, ci = 0, deleting = false;
+      const SPEED_TYPE = 70, SPEED_DEL = 35, PAUSE = 1800;
+
+      function tick() {
+        const phrase = phrases[pi];
+        el.textContent = phrase.slice(0, ci);
+        if (!deleting) {
+          if (ci < phrase.length) { ci++; setTimeout(tick, SPEED_TYPE); }
+          else { deleting = true; setTimeout(tick, PAUSE); }
+        } else {
+          if (ci > 0) { ci--; setTimeout(tick, SPEED_DEL); }
+          else { deleting = false; pi = (pi + 1) % phrases.length; setTimeout(tick, 300); }
+        }
+      }
+      tick();
+    })();
+
   </script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="js/particles-init.js"></script>
@@ -1266,6 +1337,7 @@
   <!-- ==================== AI CHATBOT ==================== -->
   <button class="ai-chat-fab" id="aiChatFab" aria-label="Chat with AI">
     <span>🤖</span>
+    <span class="ai-chat-badge" id="aiChatBadge" aria-label="1 unread message">1</span>
     <div class="ai-chat-tooltip">Chat with me!</div>
   </button>
 
@@ -1275,7 +1347,7 @@
         <span class="ai-chat-avatar">🤖</span>
         <div class="ai-chat-title">
           <h4>Edwin's AI Assistant</h4>
-          <p>Local WebGPU LLM</p>
+          <p>Basic-RAG + LLM</p>
         </div>
       </div>
       <button class="ai-chat-close" id="aiChatClose" aria-label="Close Chat">×</button>
@@ -1306,6 +1378,42 @@
 
   <!-- Chatbot UI Script (Deferred) -->
   <script type="module" src="js/chatbot/ui.js" defer></script>
+
+  <!-- Unread badge logic -->
+  <script>
+    (function () {
+      const fab = document.getElementById('aiChatFab');
+      const badge = document.getElementById('aiChatBadge');
+      const modal = document.getElementById('aiChatModal');
+      if (!fab || !badge || !modal) return;
+
+      // Hide badge initially (CSS already does this via opacity:0 / scale:0)
+      let badgeShown = false;
+
+      // Show "1 unread" badge after 4 seconds — simulates a message waiting
+      const showTimer = setTimeout(() => {
+        badge.classList.add('visible');
+        badgeShown = true;
+        // Subtle pulse on the FAB itself
+        fab.style.animation = 'none';
+      }, 4000);
+
+      // Clear badge the moment the user opens the chat
+      const observer = new MutationObserver(() => {
+        if (modal.classList.contains('open') && badgeShown) {
+          badge.classList.remove('visible');
+          badgeShown = false;
+        }
+      });
+      observer.observe(modal, { attributes: true, attributeFilter: ['class'] });
+
+      // Cleanup
+      window.addEventListener('beforeunload', () => {
+        clearTimeout(showTimer);
+        observer.disconnect();
+      });
+    })();
+  </script>
 </body>
 
 </html>
