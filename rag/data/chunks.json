@@ -1,0 +1,247 @@
+[
+  {
+    "text": "# About Edwin Cubillos | Sobre Edwin Cubillos Edwin Cubillos (también conocido como Cubillosxy) es un Ingeniero de Software Senior y Arquitecto de IA (Senior Software Engineer, AI Architect) con base en Colombia. Trabaja completamente remoto a nivel mundial. Tiene más de una década de experiencia profesional construyendo sistemas de alta escala para líderes tecnológicos globales. (sobre Edwin, quién es, perfil, presentación, bio)",
+    "section": "About Edwin Cubillos | Sobre Edwin Cubillos",
+    "id": 0
+  },
+  {
+    "text": "Philosophy — Vibe Coding | Filosofía Edwin believes in the \"Vibe Coding\" philosophy: leveraging state-of-the-art AI tools (Claude Code, Cursor, Lovable, Antigravity) to ship faster and better without sacrificing engineering excellence. He views AI not as a shortcut but as a force multiplier for senior engineers.",
+    "section": "About Edwin Cubillos | Sobre Edwin Cubillos — Philosophy — Vibe Coding | Filosofía",
+    "id": 1
+  },
+  {
+    "text": "Profile Summary | Resumen de Perfil Edwin no solo usa IA — diseña y despliega sistemas RAG de producción, agentes de IA e integraciones LLM que resuelven problemas reales de negocios. His career spans roles at Uber, Nokia, Mercado Libre, Services Steam, Axiacore, Rapigo, Storicard (Milabs), and currently Glint.",
+    "section": "About Edwin Cubillos | Sobre Edwin Cubillos — Profile Summary | Resumen de Perfil",
+    "id": 2
+  },
+  {
+    "text": "Location & Availability | Ubicación y Disponibilidad - Based in Colombia (Bogotá area) — ubicado en Colombia - Open to fully remote positions worldwide — abierto a posiciones remotas globales - Available for new opportunities (as of 2026) — disponible para nuevas oportunidades - Preferred role types: Senior Software Engineer, AI Engineer, AI Architect, Principal Engineer",
+    "section": "About Edwin Cubillos | Sobre Edwin Cubillos — Location & Availability | Ubicación y Disponibilidad",
+    "id": 3
+  },
+  {
+    "text": "Online Presence | Presencia Online - Portfolio: https://cubillosxy.github.io - GitHub: https://github.com/Cubillosxy - LinkedIn: https://www.linkedin.com/in/cubillosxy",
+    "section": "About Edwin Cubillos | Sobre Edwin Cubillos — Online Presence | Presencia Online",
+    "id": 4
+  },
+  {
+    "text": "# Contact Information Edwin Cubillos is available for new opportunities and welcomes messages from recruiters, developers, and potential collaborators.",
+    "section": "Contact Information",
+    "id": 5
+  },
+  {
+    "text": "Direct Contact - **Email**: cubillos.dev.bk@gmail.com - **WhatsApp**: +573185229619 (Colombia) - **LinkedIn**: https://www.linkedin.com/in/cubillosxy - **GitHub**: https://github.com/Cubillosxy - **Portfolio**: https://cubillosxy.github.io",
+    "section": "Contact Information — Direct Contact",
+    "id": 6
+  },
+  {
+    "text": "How to Reach Edwin The fastest ways to get in touch are WhatsApp and LinkedIn. For formal inquiries, email is preferred. Edwin is based in Colombia (UTC-5) and typically responds within 24 hours.",
+    "section": "Contact Information — How to Reach Edwin",
+    "id": 7
+  },
+  {
+    "text": "Resume / CV Edwin's resume can be downloaded directly from his portfolio at https://cubillosxy.github.io. It is available as a PDF (Profile.pdf). If you ask the AI assistant to share it, it will trigger an automatic download.",
+    "section": "Contact Information — Resume / CV",
+    "id": 8
+  },
+  {
+    "text": "Open to - Full-time remote positions (global) - AI consulting engagements - Technical co-founder / founding engineer roles - Short-term contracts with interesting technical challenges",
+    "section": "Contact Information — Open to",
+    "id": 9
+  },
+  {
+    "text": "# Work Experience Edwin Cubillos has 10+ years of professional software engineering experience across global companies. His career spans from junior embedded systems development to senior AI architecture at scale. ---",
+    "section": "Work Experience",
+    "id": 10
+  },
+  {
+    "text": "Glint — Founding Engineer & AI Consultant **Jan 2026 – Present | Remote** Website: https://withglint.co Acting as the primary technical architect and hands-on builder for enterprise AI solutions. Designing robust MVPs and Proof of Concepts from the ground up to validate core business hypotheses. Key responsibilities: - Engineering sophisticated RAG systems and autonomous agents using Anthropic LLMs, LangChain, and LangSmith for monitoring and observability. - Leveraging \"Vibe Coding\" workflow with Claude Code, Lovable, and Cursor to accelerate delivery cycles while maintaining engineering excellence. - Deploying scalable, secure applications using Supabase (backend-as-a-service), React (frontend), and Monx.dev (deployments). - Translating high-level business requirements into technical roadmaps during critical early-stage product development. Tech stack: Anthropic LLMs, LangChain, LangSmith, Claude Code, Lovable, Cursor, React, Supabase, Monx.dev ---",
+    "section": "Work Experience — Glint — Founding Engineer & AI Consultant",
+    "id": 11
+  },
+  {
+    "text": "Storicard / Milabs — AI Engineer (Contractor) **Apr 2025 – Jan 2026 | Remote** Website: https://www.storicard.com Built RAG systems, API integrations, and LLM-powered solutions for Storicard and Milabs. Reduced manual workload by 40% using AI automations. Key work: - RAG pipeline design and deployment - LLM evaluation pipelines using LangSmith - Embeddings, ChromaDB vector store - Worked with Claude (Anthropic) and OpenAI models Tech stack: Python, Go, LangChain, LangSmith, ChromaDB, OpenAI, Claude, CloudFormation ---",
+    "section": "Work Experience — Storicard / Milabs — AI Engineer (Contractor)",
+    "id": 12
+  },
+  {
+    "text": "Mercado Libre — Software Engineer, Generative AI Team **Feb 2024 – Apr 2025 (1 yr 3 mo) | Bogotá, Colombia** Website: https://www.mercadolibre.com.co Harnessed and deployed advanced AI technologies from OpenAI, Amazon Bedrock, Vertex AI, and Meta to enhance internal processes. Key areas: image recognition, image generation, text completion, and advanced AI solutions. Tech stack: Go, Python, FastAPI, Docker, BigQuery, AWS, OpenAI, Amazon Bedrock, Vertex AI ---",
+    "section": "Work Experience — Mercado Libre — Software Engineer, Generative AI Team",
+    "id": 13
+  },
+  {
+    "text": "Services Steam — Principal Engineer **Aug 2023 – Feb 2024 (7 mo) | LATAM** Website: https://servicesteam.com Led application development, cloud management on AWS, and team leadership. Implemented CI/CD pipelines, conducted code reviews, and collaborated with product managers. Mentored junior engineers and drove technical direction. Tech stack: Django, Node.js, React, AWS, CI/CD ---",
+    "section": "Work Experience — Services Steam — Principal Engineer",
+    "id": 14
+  },
+  {
+    "text": "Uber — Software Engineer / Backend Engineer **Mar 2022 – May 2023 (1 yr 3 mo) | Colombia** Website: https://www.ubereats.com/co Focused on grocery section integration within back-end APIs and mobile apps. Built REST APIs with layered architecture for scalability. Also contributed to the Cornershop onboarding process for new shoppers. Tech stack: Python, React, REST APIs ---",
+    "section": "Work Experience — Uber — Software Engineer / Backend Engineer",
+    "id": 15
+  },
+  {
+    "text": "Nokia — Senior Software Engineer & Team Lead **Apr 2018 – Feb 2022 (3 yr 11 mo) | Bogotá / Rio de Janeiro** Website: https://www.nokia.com/nokia-in-latin-america Progressed from Mid Python Developer to Senior Engineer and Team Lead. Mentored team members on best practices, conducted code reviews, and led outsourcing software development across Colombia and Brazil. Tech stack: Python, Django ---",
+    "section": "Work Experience — Nokia — Senior Software Engineer & Team Lead",
+    "id": 16
+  },
+  {
+    "text": "Axiacore — Software Web Developer **Jan 2018 – Apr 2018 (4 mo) | Bogotá** Website: https://axiacore.com Delivered high-efficiency code in a fast-paced software factory. Leveraged CI/CD and automation best practices for seamless integration and deployment. ---",
+    "section": "Work Experience — Axiacore — Software Web Developer",
+    "id": 17
+  },
+  {
+    "text": "Rapigo.co — Backend Developer **Mar 2017 – Jan 2018 (11 mo) | Bogotá** Website: https://www.rapigo.co Enhanced and implemented new functionalities, conducted unit testing, integrated frontend and backend improvements. Proficient in API integrations, OOP, and version control with Git. ---",
+    "section": "Work Experience — Rapigo.co — Backend Developer",
+    "id": 18
+  },
+  {
+    "text": "MYO-PYTHON-BEBOP — Freelance / University Thesis **Oct 2015 – May 2016 (8 mo) | Colombia** GitHub: https://github.com/Cubillosxy/MYO-PYTHON-BEBOP Developed Python software to pilot a Bebop Drone using the MYO armband as the gesture control interface. University thesis project at UPTC. Tech stack: Python, Myo SDK, Bebop drone SDK ---",
+    "section": "Work Experience — MYO-PYTHON-BEBOP — Freelance / University Thesis",
+    "id": 19
+  },
+  {
+    "text": "ROCH Electronics — Junior Software Engineer **Jan 2014 – Dec 2014 (1 yr) | Boyacá, Colombia** Website: https://www.rochelectronics.com Testing, debugging, hardware/software conversions, and modifications. Worked across multiple low-level languages. Tech stack: Python, C, C++, C#, Matlab, ASM (PICs)",
+    "section": "Work Experience — ROCH Electronics — Junior Software Engineer",
+    "id": 20
+  },
+  {
+    "text": "# Skills & Tech Stack | Habilidades y Tecnologías Edwin Cubillos tiene amplia experiencia en desarrollo full-stack con especialización profunda en sistemas de IA/ML, arquitectura backend y cloud. (skills, habilidades, tecnologías, conocimientos, stack técnico) ---",
+    "section": "Skills & Tech Stack | Habilidades y Tecnologías",
+    "id": 21
+  },
+  {
+    "text": "Programming Languages | Lenguajes de Programación Primary: Python, Go (Golang), JavaScript, TypeScript, SQL Secondary: C, C++, C#, HTML, CSS Edwin uses Python and Go daily. Python is his primary AI/data language (lenguaje principal de IA/datos); Go is his choice for high-performance backend services (servicios backend de alto rendimiento). ---",
+    "section": "Skills & Tech Stack | Habilidades y Tecnologías — Programming Languages | Lenguajes de Programación",
+    "id": 22
+  },
+  {
+    "text": "Frameworks & Libraries | Frameworks y Librerías Backend: Django, FastAPI, Flask, Node.js, Express Frontend: React, Next.js, Redux APIs: REST APIs, GraphQL AI/ML: LangChain, LangSmith ---",
+    "section": "Skills & Tech Stack | Habilidades y Tecnologías — Frameworks & Libraries | Frameworks y Librerías",
+    "id": 23
+  },
+  {
+    "text": "AI & Machine Learning | Inteligencia Artificial y Machine Learning Edwin specializes in applied Generative AI for production systems (IA generativa, inteligencia artificial): - Large Language Models (LLMs, modelos de lenguaje): OpenAI (GPT-4, GPT-3.5), Anthropic (Claude), Meta (Llama), Amazon Bedrock, Vertex AI - Orchestration (orquestación): LangChain, LangSmith, LlamaIndex - Vector stores (bases de datos vectoriales): Pinecone, ChromaDB - RAG systems (sistemas RAG, Retrieval-Augmented Generation): design and production deployment - AI Agents (agentes de IA): autonomous agents, tool use, multi-step reasoning - Other: TTS, embedding pipelines, prompt engineering, Claude Code, Antigravity ---",
+    "section": "Skills & Tech Stack | Habilidades y Tecnologías — AI & Machine Learning | Inteligencia Artificial y Machine Learning",
+    "id": 24
+  },
+  {
+    "text": "Cloud & Infrastructure | Nube e Infraestructura Cloud providers (proveedores de nube): AWS (primary), Azure AI, GCP (BigQuery, Vertex AI) Containers (contenedores): Docker, Kubernetes Infrastructure as Code: Terraform, CloudFormation, Ansible CI/CD: Jenkins, GitHub Actions Monitoring: Datadog, Kibana, Elasticsearch OS: Linux ---",
+    "section": "Skills & Tech Stack | Habilidades y Tecnologías — Cloud & Infrastructure | Nube e Infraestructura",
+    "id": 25
+  },
+  {
+    "text": "Databases | Bases de Datos Relational (relacionales): PostgreSQL, MySQL, SQLite, SQL Server NoSQL: MongoDB, DynamoDB Analytical: BigQuery Cache: Redis Vector DB (base de datos vectorial): ChromaDB ---",
+    "section": "Skills & Tech Stack | Habilidades y Tecnologías — Databases | Bases de Datos",
+    "id": 26
+  },
+  {
+    "text": "Spoken Languages | Idiomas Hablados | Languages Spoken - English / Inglés: Professional working proficiency, C1 Advanced — EF SET certified (habla inglés, nivel C1) - Spanish / Español: Native speaker — nativo, idioma nativo - Portuguese / Portugués: Professional working proficiency — nivel profesional Edwin habla inglés, español y portugués. Can communicate fluently with international teams, write technical documentation in English, and conduct interviews in both English and Spanish. ---",
+    "section": "Skills & Tech Stack | Habilidades y Tecnologías — Spoken Languages | Idiomas Hablados | Languages Spoken",
+    "id": 27
+  },
+  {
+    "text": "Tools & Methodologies | Herramientas y Metodologías Version control: Git, GitHub Project management (gestión de proyectos): Scrum, Kanban Code quality: Code review, unit testing, TDD AI tools: Claude Code, Cursor, Lovable, Antigravity",
+    "section": "Skills & Tech Stack | Habilidades y Tecnologías — Tools & Methodologies | Herramientas y Metodologías",
+    "id": 28
+  },
+  {
+    "text": "# Education ---",
+    "section": "Education",
+    "id": 29
+  },
+  {
+    "text": "Bachelor of Science (B.S.), Electronic Engineering **Universidad Pedagógica y Tecnológica de Colombia (UPTC)** 2010 – 2016 | Boyacá, Colombia Website: https://www.uptc.edu.co Edwin completed a 6-year Bachelor of Science in Electronic Engineering at UPTC, one of the most prestigious public universities in Colombia. His thesis project was the MYO-PYTHON-BEBOP system — a Python-based drone control interface using gesture recognition via the MYO armband. ---",
+    "section": "Education — Bachelor of Science (B.S.), Electronic Engineering",
+    "id": 30
+  },
+  {
+    "text": "Industrial Technician **Instituto Educativo Técnico Diversificado — Monterrey (Casanare), Colombia** Completed: 2008 Edwin completed his secondary education and technical training at IETD Monterrey, specializing in industrial technical skills. He graduated with the Academic Excellence Award, recognized as the best student of his graduating class. ⭐ Academic Excellence Award — Best Student of the graduating class (2008)",
+    "section": "Education — Industrial Technician",
+    "id": 31
+  },
+  {
+    "text": "# Certifications & Continuous Learning Edwin is committed to continuous professional development. Below are his verified certifications. ---",
+    "section": "Certifications & Continuous Learning",
+    "id": 32
+  },
+  {
+    "text": "Google Cybersecurity Certificate **Google / Coursera** Verify: https://www.credly.com/badges/4d1a160a-c3b0-4ba4-80e1-72ad08128f96/linkedin_profile Comprehensive certification covering network security, Linux, Python for security, SIEM tools, and incident response workflows. ---",
+    "section": "Certifications & Continuous Learning — Google Cybersecurity Certificate",
+    "id": 33
+  },
+  {
+    "text": "MITx: Circuits and Electronics **Massachusetts Institute of Technology (MITx) via edX** Verify: https://verify.edx.org/cert/2da8616040e14ac8b2736496fae3bf40 Rigorous MIT-level course on electronic circuits, signals, and systems. Bridges Edwin's hardware background with his software career. ---",
+    "section": "Certifications & Continuous Learning — MITx: Circuits and Electronics",
+    "id": 34
+  },
+  {
+    "text": "Applied Concurrency in Go **LinkedIn Learning** Verify: https://www.linkedin.com/learning/certificates/1df446aa5b8b7a96e87c2ea848c1804ba9279e3c667d946a31f156120f999241 Specialized course on concurrent programming patterns in Go: goroutines, channels, mutex, and race condition avoidance. ---",
+    "section": "Certifications & Continuous Learning — Applied Concurrency in Go",
+    "id": 35
+  },
+  {
+    "text": "EF SET English Certificate C1 (Advanced) **EF Standard English Test (EF SET)** Verify: https://cert.efset.org/es/GXxWnd Standardized English proficiency test. Edwin scored at C1 Advanced level, demonstrating full professional working proficiency in English for technical communication, documentation, and interviews. ---",
+    "section": "Certifications & Continuous Learning — EF SET English Certificate C1 (Advanced)",
+    "id": 36
+  },
+  {
+    "text": "Node.js Essential Training **LinkedIn Learning** Core Node.js skills including async patterns, Express, and server-side JavaScript architecture. ---",
+    "section": "Certifications & Continuous Learning — Node.js Essential Training",
+    "id": 37
+  },
+  {
+    "text": "React.js Essential Training **LinkedIn Learning** React fundamentals: hooks, state management, component architecture, and modern React patterns. ---",
+    "section": "Certifications & Continuous Learning — React.js Essential Training",
+    "id": 38
+  },
+  {
+    "text": "React: State Management **LinkedIn Learning** Advanced state management patterns in React including Redux, Context API, and Zustand. ---",
+    "section": "Certifications & Continuous Learning — React: State Management",
+    "id": 39
+  },
+  {
+    "text": "Communicating with Confidence **LinkedIn Learning** Professional communication and public speaking skills for technical leaders.",
+    "section": "Certifications & Continuous Learning — Communicating with Confidence",
+    "id": 40
+  },
+  {
+    "text": "# Public GitHub Repositories Edwin Cubillos' public projects on GitHub: https://github.com/Cubillosxy These projects showcase his practical skills across AI, backend development, embedded systems, and web applications. ---",
+    "section": "Public GitHub Repositories",
+    "id": 41
+  },
+  {
+    "text": "ticket-filter-AI **URL**: https://github.com/Cubillosxy/ticket-filter-AI **Language**: Python **Description**: AI-powered ticket selector and filter system. Uses machine learning to automatically classify, prioritize, and route support tickets. **Tags**: AI, Python, automation, machine learning, ticket management ---",
+    "section": "Public GitHub Repositories — ticket-filter-AI",
+    "id": 42
+  },
+  {
+    "text": "Ready-dev-one-AI **URL**: https://github.com/Cubillosxy/Ready-dev-one-AI **Language**: Python **Stars**: 1 **Description**: AI assistant designed to integrate artificial intelligence into software development workflows. Helps developers with code generation, review, and automation. **Tags**: AI, Python, developer tools, AI assistant, automation ---",
+    "section": "Public GitHub Repositories — Ready-dev-one-AI",
+    "id": 43
+  },
+  {
+    "text": "MYO-PYTHON-BEBOP **URL**: https://github.com/Cubillosxy/MYO-PYTHON-BEBOP **Language**: Python **Stars**: 12 | Forks: 1 **Description**: Python software to pilot a Parrot Bebop drone using the MYO gesture-control armband. University thesis project at UPTC (2016). Integrates gesture recognition with real-time drone flight control. **Tags**: Python, drone, robotics, hardware, Myo armband, Bebop, embedded systems, thesis ---",
+    "section": "Public GitHub Repositories — MYO-PYTHON-BEBOP",
+    "id": 44
+  },
+  {
+    "text": "VaultTecInventory **URL**: https://github.com/Cubillosxy/VaultTecInventory **Language**: Python **Description**: Flask REST API and React frontend for inventory management. Full-stack application demonstrating API design and React integration. **Tags**: Python, Flask, React, REST API, inventory management, full-stack ---",
+    "section": "Public GitHub Repositories — VaultTecInventory",
+    "id": 45
+  },
+  {
+    "text": "APP-CMplay **URL**: https://github.com/Cubillosxy/APP-CMplay **Language**: Python **Description**: Web application for uploading and sharing music with other users. Social music platform built with Python backend. **Tags**: Python, web app, music, social platform ---",
+    "section": "Public GitHub Repositories — APP-CMplay",
+    "id": 46
+  },
+  {
+    "text": "playwords **URL**: https://github.com/Cubillosxy/playwords **Language**: Python **Stars**: 1 **Description**: Desktop application for practicing vocabulary in Spanish and English. Built with Python and Tkinter GUI framework. **Tags**: Python, Tkinter, education, language learning, Spanish, English, desktop app ---",
+    "section": "Public GitHub Repositories — playwords",
+    "id": 47
+  },
+  {
+    "text": "Portfolio Website (cubillosxy.github.io) **URL**: https://github.com/Cubillosxy/cubillosxy.github.io **Description**: This portfolio itself — a 100% static page with no backend. Features an AI chatbot (powered by Groq / Llama 3.1), a client-side RAG system, mini-games (Tic-Tac-Toe, Ping Pong, Bot CAPTCHA), and an AI News feed. Built with vanilla HTML, CSS, and JavaScript. **Tags**: HTML, CSS, JavaScript, portfolio, static site, AI chatbot, RAG, no backend",
+    "section": "Public GitHub Repositories — Portfolio Website (cubillosxy.github.io)",
+    "id": 48
+  }
+]

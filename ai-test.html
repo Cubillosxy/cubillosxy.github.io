@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Transformers.js Test</title>
+  <style>
+    body { font-family: monospace; padding: 24px; background: #111; color: #eee; }
+    #log { white-space: pre-wrap; background: #000; padding: 16px; border-radius: 8px; min-height: 200px; }
+    .ok  { color: #4ade80; }
+    .err { color: #f87171; }
+    .inf { color: #60a5fa; }
+  </style>
+</head>
+<body>
+  <h2>🧪 Transformers.js Browser Test</h2>
+  <p>This page tests if the AI model can be downloaded and run in your browser.</p>
+  <div id="log">Starting...\n</div>
+
+  <script type="module">
+    const log = document.getElementById('log');
+    function print(msg, cls = '') {
+      const span = document.createElement('span');
+      span.className = cls;
+      span.textContent = msg + '\n';
+      log.appendChild(span);
+    }
+
+    try {
+      print('[1/4] Importing transformers.js from CDN...', 'inf');
+      const { pipeline, env } = await import(
+        'https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2'
+      );
+      print('      ✅ Import OK', 'ok');
+
+      env.allowLocalModels = false;
+
+      print('[2/4] Loading pipeline with distilgpt2 (smallest model, ~80MB)...', 'inf');
+      print('      ⏳ This will download the model — watch Network tab in DevTools', 'inf');
+
+      const model = await pipeline('text-generation', 'Xenova/distilgpt2', {
+        quantized: true,
+        progress_callback: (x) => {
+          if (x.status === 'downloading') {
+            const pct = Math.round(x.progress || 0);
+            log.lastChild.textContent = `      ⬇️  Downloading ${x.file || ''} — ${pct}%\n`;
+          } else if (x.status === 'done') {
+            print(`      ✅ File ready: ${x.file || ''}`, 'ok');
+          }
+        }
+      });
+      print('[3/4] ✅ Pipeline loaded!', 'ok');
+
+      print('[4/4] Running inference: "My name is Edwin and I am a"', 'inf');
+      const out = await model('My name is Edwin and I am a', {
+        max_new_tokens: 20,
+        do_sample: false,
+      });
+      print('      ✅ Output: ' + out[0].generated_text, 'ok');
+      print('\n🎉 SUCCESS! Transformers.js is fully working in your browser.', 'ok');
+
+    } catch (err) {
+      print('\n❌ ERROR: ' + err.message, 'err');
+      print(err.stack, 'err');
+    }
+  </script>
+</body>
+</html>
