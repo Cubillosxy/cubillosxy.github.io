@@ -28,16 +28,68 @@ const STOPWORDS = new Set([
   "porque","sobre","entre","desde","hasta","hacia","sin","con",
 ]);
 
+// ── Spanish → English query expansion map ────────────────────
+// Common Spanish query terms → English equivalents in the knowledge base
+const EXPAND_ES = {
+  'idiomas':          ['languages', 'spoken', 'english', 'spanish', 'portuguese', 'habla'],
+  'idioma':           ['language', 'spoken'],
+  'habla':            ['speaks', 'spoken', 'languages'],
+  'lenguajes':        ['languages', 'programming', 'python', 'go'],
+  'lenguaje':         ['language', 'programming'],
+  'experiencia':      ['experience', 'work', 'career', 'companies', 'jobs'],
+  'empresa':          ['company', 'companies', 'work', 'employer'],
+  'empresas':         ['companies', 'experience', 'work', 'employers'],
+  'trabajo':          ['work', 'experience', 'job', 'career'],
+  'trabajó':          ['worked', 'experience', 'companies'],
+  'habilidades':      ['skills', 'technologies', 'tech', 'stack'],
+  'tecnologias':      ['technologies', 'skills', 'frameworks', 'cloud'],
+  'certificaciones':  ['certifications', 'certificates', 'courses'],
+  'certificacion':    ['certification', 'certificate'],
+  'educacion':        ['education', 'university', 'degree', 'study'],
+  'universidad':      ['university', 'education', 'degree', 'bachelor'],
+  'estudios':         ['education', 'university', 'study', 'degree'],
+  'contacto':         ['contact', 'email', 'phone', 'whatsapp'],
+  'proyectos':        ['projects', 'github', 'repositories', 'repos'],
+  'proyecto':         ['project', 'github', 'repository'],
+  'repositorios':     ['repositories', 'github', 'projects'],
+  'nube':             ['cloud', 'aws', 'azure', 'infrastructure'],
+  'bases':            ['databases', 'postgresql', 'mongodb'],
+  'datos':            ['data', 'databases', 'bigquery'],
+  'inteligencia':     ['intelligence', 'ai', 'machine', 'learning', 'llm'],
+  'artificial':       ['artificial', 'ai', 'machine', 'learning'],
+  'disponible':       ['available', 'opportunities', 'remote'],
+  'ubicacion':        ['location', 'colombia', 'remote', 'bogota'],
+  'salario':          ['salary', 'compensation', 'available'],
+  'perfil':           ['profile', 'about', 'summary', 'bio'],
+  'resumen':          ['summary', 'profile', 'about', 'experience'],
+  'anos':             ['years', 'experience', 'decade'],
+  'python':           ['python'],
+  'ingles':           ['english', 'language', 'spoken'],
+  'espanol':          ['spanish', 'language', 'native'],
+  'portugues':        ['portuguese', 'language', 'spoken'],
+};
+
 /**
- * Tokenize a query string.
+ * Tokenize + expand Spanish terms to English equivalents.
  */
 function tokenize(text) {
-  return text
+  const base = text
     .toLowerCase()
     .replace(/[^a-z0-9áéíóúüñ\s]/g, ' ')
     .split(/\s+/)
     .filter(t => t.length > 1 && !STOPWORDS.has(t));
+
+  const expanded = [];
+  for (const token of base) {
+    expanded.push(token);
+    // Strip accents for lookup: "idiomas" matches "idiomas"
+    const normalized = token.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const synonyms = EXPAND_ES[token] || EXPAND_ES[normalized] || [];
+    expanded.push(...synonyms);
+  }
+  return expanded;
 }
+
 
 /**
  * Compute term frequency map for a list of tokens.

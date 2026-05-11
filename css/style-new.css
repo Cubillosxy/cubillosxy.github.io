@@ -2126,3 +2126,56 @@ img {
 .ai-chat-fab.hidden .ai-chat-tooltip {
   display: none;
 }
+
+/* ── Chat Markdown Rendering ── */
+.chat-assistant ol,
+.chat-assistant ul {
+  margin: 6px 0 4px 16px;
+  padding: 0;
+}
+.chat-assistant li {
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+.chat-assistant strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.chat-assistant em {
+  font-style: italic;
+  opacity: 0.9;
+}
+.chat-assistant code {
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 12px;
+}
+
+/* ── Chat Table Rendering ── */
+.chat-table-wrap {
+  overflow-x: auto;
+  margin: 8px 0;
+  border-radius: var(--radius-sm);
+}
+.chat-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.chat-table th,
+.chat-table td {
+  padding: 6px 10px;
+  text-align: left;
+  border: 1px solid rgba(255,255,255,0.1);
+  white-space: nowrap;
+}
+.chat-table th {
+  background: rgba(255,255,255,0.08);
+  font-weight: 600;
+  color: var(--accent-1);
+}
+.chat-table tr:nth-child(even) td {
+  background: rgba(255,255,255,0.03);
+}

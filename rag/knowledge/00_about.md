@@ -19,7 +19,7 @@ His career spans roles at Uber, Nokia, Mercado Libre, Services Steam, Axiacore, 
 - Based in Colombia (Bogotá area)
 - Open to fully remote positions worldwide
 - Available for new opportunities (as of 2026)
-- Preferred role types: Senior Software Engineer, AI Engineer, AI Architect, Principal Engineer
+- Preferred role types: Senior Software Engineer, AI Engineer, AI Architect, Principal Engineer, Team lead
 
 ## Online Presence
 

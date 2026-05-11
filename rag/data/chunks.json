@@ -1,27 +1,27 @@
 [
   {
-    "text": "# About Edwin Cubillos Edwin Cubillos (also known as Cubillosxy online) is a Senior Software Engineer and AI Architect based in Colombia, working fully remote worldwide. He has over a decade of professional experience building high-scale, production-grade systems for global technology leaders. Edwin is bilingual in English and Spanish and speaks Portuguese at a professional level. He is passionate about the intersection of robust backend engineering and Generative AI.",
-    "section": "About Edwin Cubillos",
+    "text": "# About Edwin Cubillos | Sobre Edwin Cubillos Edwin Cubillos (también conocido como Cubillosxy) es un Ingeniero de Software Senior y Arquitecto de IA (Senior Software Engineer, AI Architect) con base en Colombia. Trabaja completamente remoto a nivel mundial. Tiene más de una década de experiencia profesional construyendo sistemas de alta escala para líderes tecnológicos globales. (sobre Edwin, quién es, perfil, presentación, bio)",
+    "section": "About Edwin Cubillos | Sobre Edwin Cubillos",
     "id": 0
   },
   {
-    "text": "Philosophy — Vibe Coding Edwin believes in the \"Vibe Coding\" philosophy: leveraging state-of-the-art AI tools (Claude Code, Cursor, Lovable, Antigravity) to ship faster and better without sacrificing engineering excellence. He views AI not as a shortcut but as a force multiplier for senior engineers.",
-    "section": "About Edwin Cubillos — Philosophy — Vibe Coding",
+    "text": "Philosophy — Vibe Coding | Filosofía Edwin believes in the \"Vibe Coding\" philosophy: leveraging state-of-the-art AI tools (Claude Code, Cursor, Lovable, Antigravity) to ship faster and better without sacrificing engineering excellence. He views AI not as a shortcut but as a force multiplier for senior engineers.",
+    "section": "About Edwin Cubillos | Sobre Edwin Cubillos — Philosophy — Vibe Coding | Filosofía",
     "id": 1
   },
   {
-    "text": "Profile Summary Edwin is not just an AI user — he designs and deploys production-ready RAG systems, AI agents, and LLM integrations that solve real business problems. He specializes in the full stack from infrastructure (Terraform, AWS, Docker) to AI orchestration (LangChain, LangSmith, Bedrock) to frontend (React, Next.js). His career spans roles at Uber, Nokia, Mercado Libre, Services Steam, Axiacore, Rapigo, Storicard (Milabs), and currently Glint.",
-    "section": "About Edwin Cubillos — Profile Summary",
+    "text": "Profile Summary | Resumen de Perfil Edwin no solo usa IA — diseña y despliega sistemas RAG de producción, agentes de IA e integraciones LLM que resuelven problemas reales de negocios. His career spans roles at Uber, Nokia, Mercado Libre, Services Steam, Axiacore, Rapigo, Storicard (Milabs), and currently Glint.",
+    "section": "About Edwin Cubillos | Sobre Edwin Cubillos — Profile Summary | Resumen de Perfil",
     "id": 2
   },
   {
-    "text": "Location & Availability - Based in Colombia (Bogotá area) - Open to fully remote positions worldwide - Available for new opportunities (as of 2026) - Preferred role types: Senior Software Engineer, AI Engineer, AI Architect, Principal Engineer",
-    "section": "About Edwin Cubillos — Location & Availability",
+    "text": "Location & Availability | Ubicación y Disponibilidad - Based in Colombia (Bogotá area) — ubicado en Colombia - Open to fully remote positions worldwide — abierto a posiciones remotas globales - Available for new opportunities (as of 2026) — disponible para nuevas oportunidades - Preferred role types: Senior Software Engineer, AI Engineer, AI Architect, Principal Engineer",
+    "section": "About Edwin Cubillos | Sobre Edwin Cubillos — Location & Availability | Ubicación y Disponibilidad",
     "id": 3
   },
   {
-    "text": "Online Presence - Portfolio: https://cubillosxy.github.io - GitHub: https://github.com/Cubillosxy - LinkedIn: https://www.linkedin.com/in/cubillosxy",
-    "section": "About Edwin Cubillos — Online Presence",
+    "text": "Online Presence | Presencia Online - Portfolio: https://cubillosxy.github.io - GitHub: https://github.com/Cubillosxy - LinkedIn: https://www.linkedin.com/in/cubillosxy",
+    "section": "About Edwin Cubillos | Sobre Edwin Cubillos — Online Presence | Presencia Online",
     "id": 4
   },
   {
@@ -105,43 +105,43 @@
     "id": 20
   },
   {
-    "text": "# Skills & Tech Stack Edwin Cubillos has broad full-stack expertise with a deep specialization in AI/ML systems, backend architecture, and cloud infrastructure. ---",
-    "section": "Skills & Tech Stack",
+    "text": "# Skills & Tech Stack | Habilidades y Tecnologías Edwin Cubillos tiene amplia experiencia en desarrollo full-stack con especialización profunda en sistemas de IA/ML, arquitectura backend y cloud. (skills, habilidades, tecnologías, conocimientos, stack técnico) ---",
+    "section": "Skills & Tech Stack | Habilidades y Tecnologías",
     "id": 21
   },
   {
-    "text": "Programming Languages Primary: Python, Go (Golang), JavaScript, TypeScript, SQL Secondary: C, C++, C#, HTML, CSS Edwin uses Python and Go daily. Python is his primary AI/data language; Go is his choice for high-performance backend services. ---",
-    "section": "Skills & Tech Stack — Programming Languages",
+    "text": "Programming Languages | Lenguajes de Programación Primary: Python, Go (Golang), JavaScript, TypeScript, SQL Secondary: C, C++, C#, HTML, CSS Edwin uses Python and Go daily. Python is his primary AI/data language (lenguaje principal de IA/datos); Go is his choice for high-performance backend services (servicios backend de alto rendimiento). ---",
+    "section": "Skills & Tech Stack | Habilidades y Tecnologías — Programming Languages | Lenguajes de Programación",
     "id": 22
   },
   {
-    "text": "Frameworks & Libraries Backend: Django, FastAPI, Flask, Node.js, Express Frontend: React, Next.js, Redux APIs: REST APIs, GraphQL Other: LangChain, LangSmith ---",
-    "section": "Skills & Tech Stack — Frameworks & Libraries",
+    "text": "Frameworks & Libraries | Frameworks y Librerías Backend: Django, FastAPI, Flask, Node.js, Express Frontend: React, Next.js, Redux APIs: REST APIs, GraphQL AI/ML: LangChain, LangSmith ---",
+    "section": "Skills & Tech Stack | Habilidades y Tecnologías — Frameworks & Libraries | Frameworks y Librerías",
     "id": 23
   },
   {
-    "text": "AI & Machine Learning Edwin specializes in applied Generative AI for production systems: - Large Language Models (LLMs): OpenAI (GPT-4, GPT-3.5), Anthropic (Claude), Meta (Llama), Amazon Bedrock, Vertex AI - Orchestration: LangChain, LangSmith (observability), LlamaIndex - Vector stores: Pinecone, ChromaDB - RAG systems (Retrieval-Augmented Generation): design and production deployment - AI Agents: autonomous agents, tool use, multi-step reasoning - Other: TTS (text-to-speech), embedding pipelines, prompt engineering, Claude Code, Antigravity (AI pair programming) ---",
-    "section": "Skills & Tech Stack — AI & Machine Learning",
+    "text": "AI & Machine Learning | Inteligencia Artificial y Machine Learning Edwin specializes in applied Generative AI for production systems (IA generativa, inteligencia artificial): - Large Language Models (LLMs, modelos de lenguaje): OpenAI (GPT-4, GPT-3.5), Anthropic (Claude), Meta (Llama), Amazon Bedrock, Vertex AI - Orchestration (orquestación): LangChain, LangSmith, LlamaIndex - Vector stores (bases de datos vectoriales): Pinecone, ChromaDB - RAG systems (sistemas RAG, Retrieval-Augmented Generation): design and production deployment - AI Agents (agentes de IA): autonomous agents, tool use, multi-step reasoning - Other: TTS, embedding pipelines, prompt engineering, Claude Code, Antigravity ---",
+    "section": "Skills & Tech Stack | Habilidades y Tecnologías — AI & Machine Learning | Inteligencia Artificial y Machine Learning",
     "id": 24
   },
   {
-    "text": "Cloud & Infrastructure Cloud providers: AWS (primary), Azure AI, GCP (BigQuery, Vertex AI) Containers: Docker, Kubernetes Infrastructure as Code: Terraform, CloudFormation, Ansible CI/CD: Jenkins, GitHub Actions Monitoring: Datadog, Kibana, Elasticsearch OS: Linux ---",
-    "section": "Skills & Tech Stack — Cloud & Infrastructure",
+    "text": "Cloud & Infrastructure | Nube e Infraestructura Cloud providers (proveedores de nube): AWS (primary), Azure AI, GCP (BigQuery, Vertex AI) Containers (contenedores): Docker, Kubernetes Infrastructure as Code: Terraform, CloudFormation, Ansible CI/CD: Jenkins, GitHub Actions Monitoring: Datadog, Kibana, Elasticsearch OS: Linux ---",
+    "section": "Skills & Tech Stack | Habilidades y Tecnologías — Cloud & Infrastructure | Nube e Infraestructura",
     "id": 25
   },
   {
-    "text": "Databases Relational: PostgreSQL, MySQL, SQLite, SQL Server NoSQL: MongoDB, DynamoDB Analytical: BigQuery Cache: Redis Other: ChromaDB (vector DB) ---",
-    "section": "Skills & Tech Stack — Databases",
+    "text": "Databases | Bases de Datos Relational (relacionales): PostgreSQL, MySQL, SQLite, SQL Server NoSQL: MongoDB, DynamoDB Analytical: BigQuery Cache: Redis Vector DB (base de datos vectorial): ChromaDB ---",
+    "section": "Skills & Tech Stack | Habilidades y Tecnologías — Databases | Bases de Datos",
     "id": 26
   },
   {
-    "text": "Spoken Languages - English: Professional working proficiency (C1 — EF SET certified) - Spanish: Native speaker - Portuguese: Professional working proficiency Edwin can communicate fluently with international teams, write technical documentation in English, and conduct interviews in both English and Spanish. ---",
-    "section": "Skills & Tech Stack — Spoken Languages",
+    "text": "Spoken Languages | Idiomas Hablados | Languages Spoken - English / Inglés: Professional working proficiency, C1 Advanced — EF SET certified (habla inglés, nivel C1) - Spanish / Español: Native speaker — nativo, idioma nativo - Portuguese / Portugués: Professional working proficiency — nivel profesional Edwin habla inglés, español y portugués. Can communicate fluently with international teams, write technical documentation in English, and conduct interviews in both English and Spanish. ---",
+    "section": "Skills & Tech Stack | Habilidades y Tecnologías — Spoken Languages | Idiomas Hablados | Languages Spoken",
     "id": 27
   },
   {
-    "text": "Tools & Methodologies Version control: Git, GitHub Project management: Scrum, Kanban Code quality: Code review, unit testing, TDD AI tools: Claude Code, Cursor, Lovable, Antigravity",
-    "section": "Skills & Tech Stack — Tools & Methodologies",
+    "text": "Tools & Methodologies | Herramientas y Metodologías Version control: Git, GitHub Project management (gestión de proyectos): Scrum, Kanban Code quality: Code review, unit testing, TDD AI tools: Claude Code, Cursor, Lovable, Antigravity",
+    "section": "Skills & Tech Stack | Habilidades y Tecnologías — Tools & Methodologies | Herramientas y Metodologías",
     "id": 28
   },
   {

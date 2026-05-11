@@ -4,7 +4,7 @@ import { topK } from '../rag/retriever.js';
 // Reconstruct key at runtime — never stored as a single plain string
 function _rk() { return atob(GROK_TIME_STR) + atob(GROK_TIME_STR_2) + GROK_TAIL + 'Ui'; }
 
-const GROQ_MODEL   = 'llama-3.1-8b-instant';
+const GROQ_MODEL = 'llama-3.1-8b-instant';
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 
 // ── Rate Limiter Config ───────────────────────────────────────
@@ -35,11 +35,12 @@ const BASE_SYSTEM_PROMPT = `You are Edwin Cubillos' AI Assistant embedded in his
 Answer questions from recruiters and developers about Edwin's background, skills, and experience.
 
 RULES:
-- Always respond in the SAME language the user writes in (English or Spanish).
+- Always respond in the SAME language the user writes
 - Be professional, concise, and helpful.
 - Always refer to Edwin in the third person.
 - Use ONLY the provided context and your knowledge. Do not invent facts.
 - If the user asks for the resume or CV, reply EXACTLY with: [ACTION: DOWNLOAD_CV]
+- If the user asks contact using whatsapp reply EXACTLY with: [ACTION: OPEN_WHATSAPP]
 
 Edwin's contact:
 - Email: cubillos.dev.bk@gmail.com
@@ -116,7 +117,7 @@ self.addEventListener('message', async ({ data: { text } }) => {
       throw new Error('Groq API ' + response.status + ': ' + (err.error?.message || response.statusText));
     }
 
-    const data  = await response.json();
+    const data = await response.json();
     const reply = data.choices[0].message.content.trim();
 
     // 6. Update conversation history (keep last 6 turns to avoid token bloat)
@@ -125,12 +126,19 @@ self.addEventListener('message', async ({ data: { text } }) => {
     if (chatHistory.length > 12) chatHistory.splice(0, 2);
 
     // 7. Check for function calling action token
-    if (reply.includes('[ACTION: DOWNLOAD_CV]')) {
+    if (reply.includes('[ACTION:DOWNLOAD_CV]')) {
       chatHistory[chatHistory.length - 1].content = "I'm downloading Edwin's resume for you!";
       self.postMessage({
         status: 'action',
         action: 'DOWNLOAD_CV',
         message: "Sure! Downloading Edwin's resume now 📄"
+      });
+    } else if (reply.includes('[ACTION:OPEN_WHATSAPP]')) {
+      chatHistory[chatHistory.length - 1].content = "Opening WhatsApp for you!";
+      self.postMessage({
+        status: 'action',
+        action: 'OPEN_WHATSAPP',
+        message: "Sure! Opening WhatsApp now 📱"
       });
     } else {
       self.postMessage({ status: 'complete', message: reply });
