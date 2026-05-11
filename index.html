@@ -556,7 +556,7 @@
           <p class="cert-name"><a href="https://verify.edx.org/cert/2da8616040e14ac8b2736496fae3bf40" target="_blank" style="color:inherit;text-decoration:none;">MITx: Circuits and Electronics</a></p>
         </div>
         <div class="cert-card fade-in">
-          <div class="cert-icon"><a href="https://www.linkedin.com/learning/certificates/1df446aa5b8b7a96e87c2ea848c1804ba9279e3c667d946a31f156120f999241" target="_blank"><img src="img/logo-linkedin.png" alt="LinkedIn" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';" style="width: 48px; height: 48px; object-fit: contain; margin-bottom: 12px; border-radius: var(--radius-sm);" /><span style="display: none; font-size: 32px; margin-bottom: 12px;">🔗</span></a></div>
+          <div class="cert-icon"><a href="https://www.linkedin.com/learning/certificates/1df446aa5b8b7a96e87c2ea848c1804ba9279e3c667d946a31f156120f999241" target="_blank"><span style="font-size: 32px; display: inline-block; margin-bottom: 12px; text-decoration: none;">🔗</span></a></div>
           <p class="cert-name"><a href="https://www.linkedin.com/learning/certificates/1df446aa5b8b7a96e87c2ea848c1804ba9279e3c667d946a31f156120f999241" target="_blank" style="color:inherit;text-decoration:none;">Applied Concurrency in Go</a></p>
         </div>
         <div class="cert-card fade-in">
@@ -904,7 +904,7 @@
       const fab = document.getElementById('newsFab');
       const badge = document.getElementById('newsBadge');
       const collapseBtn = document.getElementById('newsPanelCollapse');
-      const arrow = collapseBtn.querySelector('.collapse-arrow');
+      const arrows = collapseBtn.querySelectorAll('.collapse-arrows span');
 
       // Create overlay
       const overlay = document.createElement('div');
@@ -916,7 +916,9 @@
         panel.classList.toggle('open', isOpen);
         overlay.classList.toggle('open', isOpen);
         fab.classList.toggle('hidden', isOpen);
-        arrow.textContent = isOpen ? '\u203a' : '\u2039';
+        if (arrows.length) {
+          arrows.forEach(a => a.textContent = isOpen ? '\u203a' : '\u2039');
+        }
       }
 
       fab.addEventListener('click', () => togglePanel(true));
@@ -1142,6 +1144,48 @@
       }, timeCollapseIntro);
     });
   </script>
+  <!-- ==================== AI CHATBOT ==================== -->
+  <button class="ai-chat-fab" id="aiChatFab" aria-label="Chat with AI">
+    <span>🤖</span>
+    <div class="ai-chat-tooltip">Chat with me!</div>
+  </button>
+  
+  <div class="ai-chat-modal" id="aiChatModal">
+    <div class="ai-chat-header">
+      <div class="ai-chat-header-info">
+        <span class="ai-chat-avatar">🤖</span>
+        <div class="ai-chat-title">
+          <h4>Edwin's AI Assistant</h4>
+          <p>Local WebGPU LLM</p>
+        </div>
+      </div>
+      <button class="ai-chat-close" id="aiChatClose" aria-label="Close Chat">×</button>
+    </div>
+    
+    <div class="ai-chat-progress-container" id="aiChatProgress" style="display: none;">
+      <p id="aiChatProgressText">Downloading AI Model...</p>
+      <div class="ai-chat-progress-bg">
+        <div class="ai-chat-progress-bar" id="aiChatProgressBar"></div>
+      </div>
+    </div>
+
+    <div class="ai-chat-messages" id="aiChatMessages">
+      <!-- Messages injected here -->
+    </div>
+
+    <div class="ai-chat-input-area">
+      <input type="text" id="aiChatInput" placeholder="Ask about my experience..." aria-label="Chat Input" />
+      <button id="aiChatSend" aria-label="Send Message">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Chatbot UI Script (Deferred) -->
+  <script type="module" src="js/chatbot/ui.js" defer></script>
 </body>
 
 </html>

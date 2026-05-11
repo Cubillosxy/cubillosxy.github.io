@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Key Encoder (Run Once, Locally Only)</title>
+  <style>
+    body { font-family: monospace; background: #111; color: #eee; padding: 32px; }
+    input { width: 100%; padding: 12px; background: #000; color: #4ade80; border: 1px solid #333;
+            border-radius: 6px; font-size: 14px; margin-bottom: 12px; box-sizing: border-box; }
+    button { padding: 12px 24px; background: #6366f1; color: #fff; border: none;
+             border-radius: 6px; cursor: pointer; font-size: 14px; }
+    pre  { background: #000; padding: 16px; border-radius: 8px; color: #86efac;
+           white-space: pre-wrap; word-break: break-all; }
+    .warn { color: #fbbf24; font-size: 13px; margin-bottom: 16px; }
+  </style>
+</head>
+<body>
+  <h2>🔐 API Key Encoder — Run Locally Only</h2>
+  <p class="warn">⚠️ Run this page ONLY on localhost. Never deploy this file. Add it to .gitignore.</p>
+
+  <label>Paste your full Groq API key (gsk_...):</label>
+  <input type="password" id="keyInput" placeholder="gsk_your_full_key_here" />
+  <button onclick="encode()">Generate Obfuscated Parts</button>
+
+  <pre id="output" style="display:none;"></pre>
+
+  <script>
+    function encode() {
+      const key = document.getElementById('keyInput').value.trim();
+      if (!key || !key.startsWith('gsk_')) {
+        alert('Please enter a valid Groq key starting with gsk_');
+        return;
+      }
+
+      // Split into 3 roughly equal parts
+      const len = key.length;
+      const p1 = key.slice(0, Math.floor(len / 3));
+      const p2 = key.slice(Math.floor(len / 3), Math.floor(2 * len / 3));
+      const p3 = key.slice(Math.floor(2 * len / 3));
+
+      // Encode first two in base64, leave third as-is (acts as the "fixed final")
+      const enc1 = btoa(p1);
+      const enc2 = btoa(p2);
+
+      // Verify round-trip
+      const reconstructed = atob(enc1) + atob(enc2) + p3;
+      const ok = reconstructed === key;
+
+      document.getElementById('output').style.display = 'block';
+      document.getElementById('output').textContent = ok
+        ? [
+            '// ✅ Paste this into js/chatbot/cfg.js',
+            '',
+            "// Part 1 (base64 encoded)",
+            `export const GROK_TIME_STR   = '${enc1}';`,
+            '',
+            "// Part 2 (base64 encoded)",
+            `export const GROK_TIME_STR_2 = '${enc2}';`,
+            '',
+            "// Part 3 (fixed tail — hardcoded)",
+            `export const GROK_TAIL       = '${p3}';`,
+            '',
+            '// Verify: reconstructed key matches original ✅',
+          ].join('\n')
+        : '❌ Encoding error — key mismatch!';
+    }
+  </script>
+</body>
+</html>
