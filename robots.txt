@@ -1,1 +1,9 @@
-User-agent: *Disallow:# Sitemap filesSitemap: https://cubillosxy.github.io/sitemap.xml
+User-agent: *
+Allow: /
+
+# Block access to internal tooling
+Disallow: /encode-key.html
+Disallow: /ai-test.html
+
+# Sitemap
+Sitemap: https://cubillosxy.github.io/sitemap.xml
