@@ -10,8 +10,8 @@
   <meta name="description"
     content="Senior AI Engineer &amp; Software Architect with 10+ years. Built production RAG systems, LLM integrations &amp; scalable backends at Uber, Mercado Libre &amp; Nokia. Python · Go · React. Open to remote opportunities worldwide." />
   <meta name="keywords"
-    content="Edwin Cubillos, Senior Software Engineer, AI Engineer, AI Architect, Python Developer, Go Developer, RAG Systems, LLM Integration, LangChain, Amazon Bedrock, OpenAI, Remote Developer, Colombia, Open to Work, AI Consultant, Founding Engineer, Generative AI, FastAPI, Django, React, AWS, Docker, Kubernetes" />
-  <meta name="author" content="Edwin Cubillos" />
+    content="Edwin Cubillos Bohorquez, Senior Software Engineer, AI Engineer, AI Architect, Python Developer, Go Developer, RAG Systems, LLM Integration, LangChain, Amazon Bedrock, OpenAI, Remote Developer, Colombia, Open to Work, AI Consultant, Founding Engineer, Generative AI, FastAPI, Django, React, AWS, Docker, Kubernetes, ingeniero de ai, ventas de pagina web, integracion de AI, experto en AI, AI integration, web page sales, AI expert" />
+  <meta name="author" content="Edwin Cubillos Bohorquez" />
   <meta name="language" content="English" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cubillosxy.github.io/" />
@@ -96,10 +96,16 @@
   <!-- Scroll Progress Bar -->
   <div id="scrollProgress" role="progressbar" aria-label="Page scroll progress"></div>
 
+  <!-- Accessible & SEO-Optimized Off-Screen Context (Semantic indexing for Spanish and English searches) -->
+  <div class="sr-only">
+    <h2>Edwin Cubillos - Ingeniero de AI & Experto en Integración de AI / Senior AI Engineer & AI Consultant</h2>
+    <p>Edwin Cubillos es un ingeniero de software senior y experto en AI, especializado en el desarrollo e integración de inteligencia artificial avanzada (AI Integration). Ofrece consultoría técnica de alto nivel para empresas globales y servicios profesionales como la creación, optimización y ventas de página web premium (web page sales, AI expert, AI consultant). Si estás buscando un ingeniero de ai (AI engineer) con amplia experiencia en sistemas RAG, agentes autónomos y arquitecturas de backend altamente escalables, explora su portafolio y proyectos destacados.</p>
+  </div>
+
   <!-- ==================== HEADER ==================== -->
   <header class="header" id="header">
     <nav class="nav">
-      <a href="#" class="nav-logo">Edwin<span>.</span></a>
+      <a href="#" class="nav-logo">Edwin Cubillos<span>.</span></a>
       <div class="nav-links" id="navLinks">
         <a href="#about" data-section="about">About</a>
         <a href="#skills" data-section="skills">Skills</a>
@@ -176,11 +182,11 @@
             </div>
           </div>
         </div>
-        <div class="hero-photo-wrap">
+        <div class="hero-photo-wrap" style="flex-direction: column; align-items: center;">
           <img class="hero-photo" src="https://avatars.githubusercontent.com/u/17167246?s=460&v=4" alt="Edwin Cubillos"
             loading="eager" />
           <!-- Open-to-work badge — controlled by OPEN_TO_WORK flag in the inline script below -->
-          <div class="otw-badge" id="otwBadge">
+          <div class="otw-badge" id="otwBadge" style="margin-top: 12px;">
             <span class="otw-dot"></span>
             Open to Work
           </div>
@@ -188,6 +194,11 @@
       </div>
     </div>
   </section>
+  <!-- Hidden SEO keywords for better indexing -->
+  <div style="display:none;">
+    ingeniero de ai, ventas de pagina web, integracion de AI, experto en AI, AI engineer, AI integration, web page
+    sales, AI expert, senior AI engineer, AI consultant, software engineer, AI developer, AI specialist
+  </div>
 
   <!-- ==================== SKILLS ==================== -->
   <section class="section skills-section" id="skills">
@@ -1347,7 +1358,7 @@
         <span class="ai-chat-avatar">🤖</span>
         <div class="ai-chat-title">
           <h4>Edwin's AI Assistant</h4>
-          <p>Basic-RAG + LLM</p>
+          <p>Basic-RAG Agent</p>
         </div>
       </div>
       <button class="ai-chat-close" id="aiChatClose" aria-label="Close Chat">×</button>
@@ -1413,6 +1424,42 @@
         observer.disconnect();
       });
     })();
+  </script>
+
+  <!-- Experience Timeline Dynamic Collapse/Expand Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Small timeout to let responsive rendering and layout finish
+      setTimeout(() => {
+        const descriptions = document.querySelectorAll('.timeline-desc');
+        descriptions.forEach(desc => {
+          // Check if description is long enough to warrant collapsing (> 90px height)
+          if (desc.scrollHeight > 90) {
+            desc.classList.add('collapsible', 'collapsed');
+            
+            const btn = document.createElement('button');
+            btn.className = 'timeline-expand-btn';
+            btn.innerHTML = 'Read more <span style="font-size: 10px; margin-left: 2px;">↓</span>';
+            
+            btn.addEventListener('click', () => {
+              const isCollapsed = desc.classList.contains('collapsed');
+              if (isCollapsed) {
+                desc.classList.remove('collapsed');
+                btn.innerHTML = 'Read less <span style="font-size: 10px; margin-left: 2px;">↑</span>';
+              } else {
+                desc.classList.add('collapsed');
+                btn.innerHTML = 'Read more <span style="font-size: 10px; margin-left: 2px;">↓</span>';
+                // Smoothly scroll container into view if needed
+                desc.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              }
+            });
+            
+            // Insert button directly after timeline-desc inside timeline-card
+            desc.parentNode.insertBefore(btn, desc.nextSibling);
+          }
+        });
+      }, 300);
+    });
   </script>
 </body>
 

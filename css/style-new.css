@@ -283,18 +283,21 @@ img {
   height: 8px;
   border-radius: 50%;
   background: #22c55e;
-  animation: pulse 2s infinite;
+  animation: status-glow-pulse 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-@keyframes pulse {
-
-  0%,
-  100% {
-    opacity: 1;
+@keyframes status-glow-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
   }
-
-  50% {
-    opacity: 0.4;
+  70% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
   }
 }
 
@@ -1865,7 +1868,7 @@ img {
   right: 24px;
   width: 350px;
   height: 500px;
-  background: var(--bg-card);
+  background: #0e0e15;
   border: 1px solid var(--border-accent);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
@@ -2081,7 +2084,7 @@ img {
   position: absolute;
   right: 100%;
   margin-right: 14px;
-  background: var(--bg-card);
+  background: rgba(18, 18, 26, 0.85);
   color: var(--text-primary);
   padding: 8px 12px;
   border-radius: 12px;
@@ -2091,6 +2094,8 @@ img {
   font-weight: 500;
   white-space: nowrap;
   pointer-events: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   animation: floatChatTooltip 3s ease-in-out infinite;
 }
 
@@ -2113,13 +2118,19 @@ img {
   transform: translateY(-50%);
   border-width: 5px 0 5px 5px;
   border-style: solid;
-  border-color: transparent transparent transparent var(--bg-card);
+  border-color: transparent transparent transparent rgba(18, 18, 26, 0.85);
   z-index: 1;
 }
 
 @keyframes floatChatTooltip {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-4px);
+    opacity: 0.25;
+  }
 }
 
 /* Hide tooltip when modal is open */
@@ -2227,20 +2238,36 @@ img {
   top: 0;
   left: 0;
   width: 0%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent-1, #7c3aed), var(--accent-2, #06b6d4));
+  height: 3.5px;
+  background: linear-gradient(90deg, var(--accent-1, #7c3aed), var(--accent-2, #06b6d4), var(--accent-3, #a78bfa));
   z-index: 9999;
   transition: width 0.1s linear;
   box-shadow: 0 0 8px var(--accent-1, #7c3aed);
+  animation: scroll-shimmer 2.5s linear infinite;
+  background-size: 200% 100%;
 }
+
+@keyframes scroll-shimmer {
+  0% {
+    background-position: 0% 50%;
+    box-shadow: 0 0 8px var(--accent-1, #7c3aed);
+  }
+  50% {
+    background-position: 100% 50%;
+    box-shadow: 0 0 14px var(--accent-2, #06b6d4);
+  }
+  100% {
+    background-position: 0% 50%;
+    box-shadow: 0 0 8px var(--accent-1, #7c3aed);
+  }
+}
+
 
 /* ── Open to Work Badge ── */
 .otw-badge {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
+  position: relative;
+  margin-top: 12px;
+  display: inline-flex;
   align-items: center;
   gap: 6px;
   background: rgba(16, 185, 129, 0.15);
@@ -2259,12 +2286,8 @@ img {
   height: 7px;
   border-radius: 50%;
   background: #10b981;
-  animation: otw-pulse 1.8s ease-in-out infinite;
+  animation: status-glow-pulse 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   flex-shrink: 0;
-}
-@keyframes otw-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.5; transform: scale(0.8); }
 }
 
 /* ── Hero Typing Cursor ── */
@@ -2302,3 +2325,62 @@ img {
 }
 .email-revealed:hover .copy-hint,
 .email-revealed.copied .copy-hint { opacity: 1; }
+
+/* ── Accessible off-screen class for semantic SEO indexing ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ── Experience Timeline Collapsible/Expandable Cards ── */
+.timeline-desc.collapsible {
+  max-height: none;
+  overflow: visible;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-desc.collapsed {
+  max-height: 90px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Beautiful fading gradient overlay at the bottom of the collapsed card */
+.timeline-desc.collapsed::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  background: linear-gradient(rgba(255, 255, 255, 0), #13131c 95%);
+  pointer-events: none;
+}
+
+/* SLEEK, PREMIUM EXPAND/COLLAPSE BUTTON */
+.timeline-expand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: var(--accent-3);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-top: 12px;
+  transition: var(--transition);
+}
+
+.timeline-expand-btn:hover {
+  color: var(--accent-1);
+  transform: translateX(4px);
+}
+
