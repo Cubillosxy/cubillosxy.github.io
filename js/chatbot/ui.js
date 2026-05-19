@@ -1,4 +1,4 @@
-import { triggerDownloadCV, triggerWhatsApp } from './actions.js';
+import { triggerDownloadCV, triggerWhatsApp, triggerBookMeeting } from './actions.js';
 import { playSend, playThinking, playReceive } from './sounds.js';
 
 // ── Lightweight Markdown → HTML renderer ────────────────────
@@ -187,6 +187,8 @@ class ChatBotUI {
           triggerDownloadCV();
         } else if (data.action === 'OPEN_WHATSAPP') {
           triggerWhatsApp(data.name || '');
+        } else if (data.action === 'BOOK_MEETING') {
+          triggerBookMeeting();
         }
         break;
 

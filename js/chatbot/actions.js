@@ -1,5 +1,6 @@
 const WHATSAPP_NUMBER = '573185229619';
 
+
 export function triggerDownloadCV() {
   const a = document.createElement('a');
   a.href = './Profile.pdf';
@@ -20,4 +21,11 @@ export function triggerWhatsApp(name) {
 
   const url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(greeting);
   window.open(url, '_blank', 'noopener,noreferrer');
+}
+
+/**
+ * Opens Edwin's Calendly coffee chat scheduler in a new tab.
+ */
+export function triggerBookMeeting() {
+  window.open('https://calendly.com/cubillos-dev-bk/coffee-with-edwin', '_blank', 'noopener,noreferrer');
 }
