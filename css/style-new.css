@@ -1672,11 +1672,48 @@ img {
   height: 22px;
 }
 
+.calendly-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 22px;
+  height: 47px;
+  box-sizing: border-box;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: 1.5px solid var(--accent-1, #7c3aed);
+  color: var(--accent-3, #a78bfa);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: inherit;
+  transition: var(--transition);
+  letter-spacing: 0.01em;
+}
+
+.calendly-btn:hover {
+  background: var(--accent-1, #7c3aed);
+  border-color: var(--accent-1, #7c3aed);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgba(124, 58, 237, 0.45);
+}
+
+.calendly-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  stroke: currentColor;
+}
+
 .email-reveal-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 28px;
+  padding: 0 24px;
+  height: 47px;
+  box-sizing: border-box;
   border-radius: var(--radius-sm);
   background: var(--gradient-primary);
   color: #fff;
@@ -1687,6 +1724,7 @@ img {
   border: none;
   transition: var(--transition);
   box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  white-space: nowrap;
 }
 
 .email-reveal-btn:hover {

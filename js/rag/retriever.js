@@ -8,110 +8,110 @@ import { loadRAG } from './loader.js';
 
 // ── BM25 parameters (must match chunk_and_index.py) ──────────
 const K1 = 1.5;
-const B  = 0.75;
+const B = 0.75;
 
 // EN + ES stopwords
 const STOPWORDS = new Set([
   // English
-  "a","an","the","and","or","but","in","on","at","to","for","of","with",
-  "by","from","is","was","are","were","be","been","being","have","has",
-  "had","do","does","did","will","would","could","should","may","might",
-  "his","her","he","she","they","we","you","i","it","its","this","that",
-  "these","those","as","if","not","no","so","up","out","about","into",
-  "also","than","then","there","when","where","which","who","how","what",
-  "all","more","some","any","can","just","over","after","before",
+  "a", "an", "the", "and", "or", "but", "in", "on", "at", "to", "for", "of", "with",
+  "by", "from", "is", "was", "are", "were", "be", "been", "being", "have", "has",
+  "had", "do", "does", "did", "will", "would", "could", "should", "may", "might",
+  "his", "her", "he", "she", "they", "we", "you", "i", "it", "its", "this", "that",
+  "these", "those", "as", "if", "not", "no", "so", "up", "out", "about", "into",
+  "also", "than", "then", "there", "when", "where", "which", "who", "how", "what",
+  "all", "more", "some", "any", "can", "just", "over", "after", "before",
   // Spanish
-  "el","la","los","las","un","una","unos","unas","y","o","pero","en",
-  "de","del","al","con","por","para","a","que","se","su","sus","lo",
-  "le","les","es","son","fue","era","una","más","mi","tu","si","no",
-  "como","cuando","donde","quien","hay","ya","así","muy","también",
-  "porque","sobre","entre","desde","hasta","hacia","sin","con",
+  "el", "la", "los", "las", "un", "una", "unos", "unas", "y", "o", "pero", "en",
+  "de", "del", "al", "con", "por", "para", "a", "que", "se", "su", "sus", "lo",
+  "le", "les", "es", "son", "fue", "era", "una", "más", "mi", "tu", "si", "no",
+  "como", "cuando", "donde", "quien", "hay", "ya", "así", "muy", "también",
+  "porque", "sobre", "entre", "desde", "hasta", "hacia", "sin", "con",
 ]);
 
 // ── Spanish → English query expansion map ────────────────────
 const EXPAND_ES = {
   // Languages / Idiomas
-  'idiomas':          ['languages', 'spoken', 'english', 'spanish', 'portuguese'],
-  'idioma':           ['language', 'spoken'],
-  'habla':            ['speaks', 'spoken', 'languages'],
-  'lenguajes':        ['languages', 'programming', 'python', 'go'],
-  'lenguaje':         ['language', 'programming'],
-  'ingles':           ['english', 'language', 'spoken', 'c1'],
-  'espanol':          ['spanish', 'language', 'native'],
-  'portugues':        ['portuguese', 'language', 'spoken'],
+  'idiomas': ['languages', 'spoken', 'english', 'spanish', 'portuguese'],
+  'idioma': ['language', 'spoken'],
+  'habla': ['speaks', 'spoken', 'languages'],
+  'lenguajes': ['languages', 'programming', 'python', 'go'],
+  'lenguaje': ['language', 'programming'],
+  'ingles': ['english', 'language', 'spoken', 'c1'],
+  'espanol': ['spanish', 'language', 'native'],
+  'portugues': ['portuguese', 'language', 'spoken'],
 
   // Work / Experience — most important block
-  'experiencia':      ['experience', 'work', 'career', 'companies', 'jobs', 'positions', 'roles', 'history'],
-  'trabajo':          ['work', 'experience', 'job', 'career', 'role', 'position', 'company'],
-  'trabajos':         ['jobs', 'work', 'experience', 'roles', 'positions', 'career', 'companies'],
-  'trabajó':          ['worked', 'experience', 'companies', 'roles'],
-  'empresa':          ['company', 'companies', 'work', 'employer', 'employer'],
-  'empresas':         ['companies', 'experience', 'work', 'employers', 'jobs'],
-  'posicion':         ['position', 'role', 'job', 'work', 'company'],
-  'posiciones':       ['positions', 'roles', 'jobs', 'work', 'companies', 'experience'],
-  'rol':              ['role', 'position', 'job', 'work', 'title'],
-  'roles':            ['roles', 'positions', 'jobs', 'work', 'companies'],
-  'cargo':            ['role', 'position', 'title', 'job'],
-  'cargos':           ['roles', 'positions', 'titles', 'jobs'],
-  'ultimos':          ['last', 'recent', 'latest', 'current', 'previous'],
-  'ultimas':          ['last', 'recent', 'latest', 'current', 'previous'],
-  'ultimo':           ['last', 'recent', 'latest', 'current'],
-  'ultima':           ['last', 'recent', 'latest', 'current'],
-  'reciente':         ['recent', 'last', 'latest', 'current', 'now'],
-  'recientes':        ['recent', 'latest', 'last', 'current'],
-  'actual':           ['current', 'present', 'now', 'latest', 'recent'],
-  'actualmente':      ['currently', 'present', 'now', 'working'],
-  'carrera':          ['career', 'experience', 'work', 'history', 'jobs'],
-  'historial':        ['history', 'experience', 'career', 'work', 'jobs'],
+  'experiencia': ['experience', 'work', 'career', 'companies', 'jobs', 'positions', 'roles', 'history'],
+  'trabajo': ['work', 'experience', 'job', 'career', 'role', 'position', 'company'],
+  'trabajos': ['jobs', 'work', 'experience', 'roles', 'positions', 'career', 'companies'],
+  'trabajó': ['worked', 'experience', 'companies', 'roles'],
+  'empresa': ['company', 'companies', 'work', 'employer', 'employer'],
+  'empresas': ['companies', 'experience', 'work', 'employers', 'jobs'],
+  'posicion': ['position', 'role', 'job', 'work', 'company'],
+  'posiciones': ['positions', 'roles', 'jobs', 'work', 'companies', 'experience'],
+  'rol': ['role', 'position', 'job', 'work', 'title'],
+  'roles': ['roles', 'positions', 'jobs', 'work', 'companies'],
+  'cargo': ['role', 'position', 'title', 'job'],
+  'cargos': ['roles', 'positions', 'titles', 'jobs'],
+  'ultimos': ['last', 'recent', 'latest', 'current', 'previous'],
+  'ultimas': ['last', 'recent', 'latest', 'current', 'previous'],
+  'ultimo': ['last', 'recent', 'latest', 'current'],
+  'ultima': ['last', 'recent', 'latest', 'current'],
+  'reciente': ['recent', 'last', 'latest', 'current', 'now'],
+  'recientes': ['recent', 'latest', 'last', 'current'],
+  'actual': ['current', 'present', 'now', 'latest', 'recent'],
+  'actualmente': ['currently', 'present', 'now', 'working'],
+  'carrera': ['career', 'experience', 'work', 'history', 'jobs'],
+  'historial': ['history', 'experience', 'career', 'work', 'jobs'],
 
   // Skills / Tech
-  'habilidades':      ['skills', 'technologies', 'tech', 'stack', 'expertise'],
-  'tecnologias':      ['technologies', 'skills', 'frameworks', 'cloud', 'tools'],
-  'herramientas':     ['tools', 'technologies', 'stack', 'frameworks'],
-  'conocimientos':    ['knowledge', 'skills', 'expertise', 'technologies'],
+  'habilidades': ['skills', 'technologies', 'tech', 'stack', 'expertise'],
+  'tecnologias': ['technologies', 'skills', 'frameworks', 'cloud', 'tools'],
+  'herramientas': ['tools', 'technologies', 'stack', 'frameworks'],
+  'conocimientos': ['knowledge', 'skills', 'expertise', 'technologies'],
 
   // Education
-  'educacion':        ['education', 'university', 'degree', 'study'],
-  'universidad':      ['university', 'education', 'degree', 'bachelor'],
-  'estudios':         ['education', 'university', 'study', 'degree'],
-  'titulo':           ['degree', 'education', 'university', 'bachelor'],
+  'educacion': ['education', 'university', 'degree', 'study'],
+  'universidad': ['university', 'education', 'degree', 'bachelor'],
+  'estudios': ['education', 'university', 'study', 'degree'],
+  'titulo': ['degree', 'education', 'university', 'bachelor'],
 
   // Certifications
-  'certificaciones':  ['certifications', 'certificates', 'courses'],
-  'certificacion':    ['certification', 'certificate'],
-  'cursos':           ['courses', 'certifications', 'learning', 'training'],
+  'certificaciones': ['certifications', 'certificates', 'courses'],
+  'certificacion': ['certification', 'certificate'],
+  'cursos': ['courses', 'certifications', 'learning', 'training'],
 
   // Contact
-  'contacto':         ['contact', 'email', 'phone', 'whatsapp'],
-  'telefono':         ['phone', 'whatsapp', 'contact'],
-  'correo':           ['email', 'contact', 'gmail'],
+  'contacto': ['contact', 'email', 'phone', 'whatsapp'],
+  'telefono': ['phone', 'whatsapp', 'contact'],
+  'correo': ['email', 'contact', 'gmail'],
 
   // Projects / Repos
-  'proyectos':        ['projects', 'github', 'repositories', 'repos'],
-  'proyecto':         ['project', 'github', 'repository'],
-  'repositorios':     ['repositories', 'github', 'projects'],
+  'proyectos': ['projects', 'github', 'repositories', 'repos'],
+  'proyecto': ['project', 'github', 'repository'],
+  'repositorios': ['repositories', 'github', 'projects'],
 
   // Cloud / DB
-  'nube':             ['cloud', 'aws', 'azure', 'infrastructure'],
-  'bases':            ['databases', 'postgresql', 'mongodb'],
-  'datos':            ['data', 'databases', 'bigquery'],
+  'nube': ['cloud', 'aws', 'azure', 'infrastructure'],
+  'bases': ['databases', 'postgresql', 'mongodb'],
+  'datos': ['data', 'databases', 'bigquery'],
 
   // AI
-  'inteligencia':     ['intelligence', 'ai', 'machine', 'learning', 'llm'],
-  'artificial':       ['artificial', 'ai', 'machine', 'learning'],
-  'agentes':          ['agents', 'ai', 'llm', 'autonomous'],
+  'inteligencia': ['intelligence', 'ai', 'machine', 'learning', 'llm'],
+  'artificial': ['artificial', 'ai', 'machine', 'learning'],
+  'agentes': ['agents', 'ai', 'llm', 'autonomous'],
 
   // Location / Availability
-  'disponible':       ['available', 'opportunities', 'remote', 'open'],
-  'ubicacion':        ['location', 'colombia', 'remote', 'bogota'],
-  'salario':          ['salary', 'compensation'],
+  'disponible': ['available', 'opportunities', 'remote', 'open'],
+  'ubicacion': ['location', 'colombia', 'remote', 'bogota'],
+  'salario': ['salary', 'compensation'],
 
   // Profile
-  'perfil':           ['profile', 'about', 'summary', 'bio'],
-  'resumen':          ['summary', 'profile', 'about', 'experience'],
-  'sobre':            ['about', 'profile', 'bio', 'summary'],
-  'quien':            ['who', 'about', 'profile', 'bio'],
-  'anos':             ['years', 'experience', 'decade'],
+  'perfil': ['profile', 'about', 'summary', 'bio'],
+  'resumen': ['summary', 'profile', 'about', 'experience'],
+  'sobre': ['about', 'profile', 'bio', 'summary'],
+  'quien': ['who', 'about', 'profile', 'bio'],
+  'anos': ['years', 'experience', 'decade'],
 };
 
 /**
@@ -154,8 +154,8 @@ function scoreBM25(queryTerms, chunkTokens, idf, avgdl) {
   let score = 0;
   for (const term of queryTerms) {
     if (!idf[term]) continue;
-    const f    = tf[term] || 0;
-    const num  = f * (K1 + 1);
+    const f = tf[term] || 0;
+    const num = f * (K1 + 1);
     const denom = f + K1 * (1 - B + B * (dl / avgdl));
     score += idf[term] * (num / denom);
   }

@@ -32,24 +32,33 @@ function _checkRateLimit() {
 
 // ── Base system prompt ────────────────────────────────────────
 const BASE_SYSTEM_PROMPT = `You are Edwin Cubillos' AI Assistant embedded in his portfolio website.
-Your job is to answer questions from recruiters and developers about Edwin's background, skills, experience, and personal interests.
+Your job is to answer questions from recruiters, hiring managers, and developers about Edwin's background, skills, experience, and personal interests.
 Include his hobbies: reading about AI technology, testing new AI tools, running, CrossFit, and traveling.
 When asked about a typical workday, respond with: "I start with a coffee, review my email and calendar, then prioritize and work on assigned tasks."
 
+CRITICAL BEHAVIOR — PROACTIVE SCHEDULING:
+- Whenever a user asks about Edwin's availability, if he's open to work, if he's looking for a job, or if they express interest in working with him — ALWAYS end your reply by naturally inviting them to schedule a quick call. Example endings: "Would you like to schedule a quick coffee chat to discuss further? ☕", "You can book a 15-minute call directly on his calendar — want me to open it?", or "Interested in connecting? Edwin's calendar is open for a quick coffee chat!"
+- If the user then says yes, agrees, or asks to schedule/book/meet — reply EXACTLY with: [ACTION: BOOK_MEETING]
+
 RULES:
-- Always respond in the SAME language the user writes
-- Be professional, concise, and helpful.
+- Always respond in the SAME language the user writes in. If Spanish → answer in Spanish. If English → answer in English.
+- Be warm, professional, concise, and helpful.
 - Always refer to Edwin in the third person.
 - Use ONLY the provided context and your knowledge. Do not invent facts.
-- If the user asks for the resume or CV, reply EXACTLY with: [ACTION: DOWNLOAD_CV]
-- If the user asks contact using whatsapp reply EXACTLY with: [ACTION: OPEN_WHATSAPP]
-- Dont include the portfolio link in the response cause the user is already in it.
+- Keep responses short (2-4 sentences) unless the user asks for details.
+- Dont include the portfolio link in the response as the user is already on it.
+
+ACTIONS — reply EXACTLY with the token and NO other text:
+- User asks for resume or CV → [ACTION: DOWNLOAD_CV]
+- User asks to contact via WhatsApp → [ACTION: OPEN_WHATSAPP]
+- User confirms they want to schedule a call, meet, or book → [ACTION: BOOK_MEETING]
 
 Edwin's contact:
 - Email: cubillos.dev.bk@gmail.com
 - WhatsApp: +573185229619
 - LinkedIn: https://www.linkedin.com/in/cubillosxy
-- GitHub: https://github.com/Cubillosxy`;
+- GitHub: https://github.com/Cubillosxy
+- Calendar / Book a coffee chat: https://calendly.com/cubillos-dev-bk/coffee-with-edwin`;
 
 /**
  * Build a full system prompt with RAG context injected.
@@ -136,20 +145,28 @@ self.addEventListener('message', async ({ data: { text } }) => {
     chatHistory.push({ role: 'assistant', content: reply });
     if (chatHistory.length > 12) chatHistory.splice(0, 2);
 
-    // 7. Check for function calling action token
-    if (reply.includes('[ACTION:DOWNLOAD_CV]')) {
+    // 7. Check for function calling action token (handle both [ACTION: X] and [ACTION:X])
+    const normalizedReply = reply.replace(/\[ACTION:\s*/g, '[ACTION:');
+    if (normalizedReply.includes('[ACTION:DOWNLOAD_CV]')) {
       chatHistory[chatHistory.length - 1].content = "I'm downloading Edwin's resume for you!";
       self.postMessage({
         status: 'action',
         action: 'DOWNLOAD_CV',
         message: "Sure! Downloading Edwin's resume now 📄"
       });
-    } else if (reply.includes('[ACTION:OPEN_WHATSAPP]')) {
+    } else if (normalizedReply.includes('[ACTION:OPEN_WHATSAPP]')) {
       chatHistory[chatHistory.length - 1].content = "Opening WhatsApp for you!";
       self.postMessage({
         status: 'action',
         action: 'OPEN_WHATSAPP',
         message: "Sure! Opening WhatsApp now 📱"
+      });
+    } else if (normalizedReply.includes('[ACTION:BOOK_MEETING]')) {
+      chatHistory[chatHistory.length - 1].content = "Opening Edwin's scheduler!";
+      self.postMessage({
+        status: 'action',
+        action: 'BOOK_MEETING',
+        message: "Great! Opening Edwin's calendar so you can pick a time that works for you ☕"
       });
     } else {
       self.postMessage({ status: 'complete', message: reply });
