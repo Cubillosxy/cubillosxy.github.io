@@ -23,8 +23,8 @@ const STOPWORDS = new Set([
   // Spanish
   "el", "la", "los", "las", "un", "una", "unos", "unas", "y", "o", "pero", "en",
   "de", "del", "al", "con", "por", "para", "a", "que", "se", "su", "sus", "lo",
-  "le", "les", "es", "son", "fue", "era", "una", "más", "mi", "tu", "si", "no",
-  "como", "cuando", "donde", "quien", "hay", "ya", "así", "muy", "también",
+  "le", "les", "es", "son", "fue", "era", "una", "mas", "mi", "tu", "si", "no",
+  "como", "cuando", "donde", "quien", "hay", "ya", "asi", "muy", "tambien",
   "porque", "sobre", "entre", "desde", "hasta", "hacia", "sin", "con",
 ]);
 
@@ -103,7 +103,13 @@ const EXPAND_ES = {
 
   // Location / Availability
   'disponible': ['available', 'opportunities', 'remote', 'open'],
-  'ubicacion': ['location', 'colombia', 'remote', 'bogota'],
+  'ubicacion': ['location', 'remote', 'sevilla', 'seville', 'spain', 'espana'],
+  'donde': ['location', 'where', 'based', 'sevilla', 'seville', 'spain', 'espana'],
+  'sevilla': ['seville', 'spain', 'espana', 'location', 'remote', 'anywhere'],
+  'seville': ['sevilla', 'spain', 'espana', 'location', 'remote', 'anywhere'],
+  'espana': ['spain', 'sevilla', 'seville', 'location', 'remote', 'anywhere'],
+  'spain': ['espana', 'sevilla', 'seville', 'location', 'remote', 'anywhere'],
+  'remoto': ['remote', 'anywhere', 'worldwide', 'location'],
   'salario': ['salary', 'compensation'],
 
   // Profile
@@ -114,22 +120,27 @@ const EXPAND_ES = {
   'anos': ['years', 'experience', 'decade'],
 };
 
+function stripAccents(str) {
+  const accents = {
+    'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u', 'ü': 'u'
+  };
+  return str.replace(/[áéíóúü]/g, match => accents[match]);
+}
+
 /**
  * Tokenize + expand Spanish terms to English equivalents.
  */
 function tokenize(text) {
-  const base = text
-    .toLowerCase()
-    .replace(/[^a-z0-9áéíóúüñ\s]/g, ' ')
+  const normalizedText = stripAccents(text.toLowerCase());
+  const base = normalizedText
+    .replace(/[^a-z0-9ñ\s]/g, ' ')
     .split(/\s+/)
     .filter(t => t.length > 1 && !STOPWORDS.has(t));
 
   const expanded = [];
   for (const token of base) {
     expanded.push(token);
-    // Strip accents for lookup: "idiomas" matches "idiomas"
-    const normalized = token.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    const synonyms = EXPAND_ES[token] || EXPAND_ES[normalized] || [];
+    const synonyms = EXPAND_ES[token] || [];
     expanded.push(...synonyms);
   }
   return expanded;
