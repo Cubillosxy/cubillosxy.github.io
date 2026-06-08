@@ -37,16 +37,25 @@ STOPWORDS = {
     # Spanish
     "el","la","los","las","un","una","unos","unas","y","o","pero","en",
     "de","del","al","con","por","para","a","que","se","su","sus","lo",
-    "le","les","es","son","fue","era","una","más","mi","tu","si","no",
-    "como","cuando","donde","quien","hay","ya","así","muy","también",
+    "le","les","es","son","fue","era","una","mas","mi","tu","si","no",
+    "como","cuando","donde","quien","hay","ya","asi","muy","tambien",
     "porque","sobre","entre","desde","hasta","hacia","sin","con",
 }
 
+def strip_accents(text):
+    accents = {
+        'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u', 'ü': 'u',
+        'Á': 'a', 'É': 'e', 'Í': 'i', 'Ó': 'o', 'Ú': 'u', 'Ü': 'u'
+    }
+    for char, repl in accents.items():
+        text = text.replace(char, repl)
+    return text
+
 # ── Tokenizer ─────────────────────────────────────────────────
 def tokenize(text):
-    """Lowercase, remove punctuation, split, remove stopwords."""
-    text = text.lower()
-    text = re.sub(r"[^a-z0-9áéíóúüñ\s]", " ", text)
+    """Lowercase, remove accents, remove punctuation, split, remove stopwords."""
+    text = strip_accents(text.lower())
+    text = re.sub(r"[^a-z0-9ñ\s]", " ", text)
     return [t for t in text.split() if t and t not in STOPWORDS and len(t) > 1]
 
 

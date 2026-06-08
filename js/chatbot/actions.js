@@ -1,5 +1,5 @@
-const WHATSAPP_NUMBER = '573185229619';
-
+const WHATSAPP_NUMBER = '34615712119';
+// const WHATSAPP_NUMBER = '573185229619';
 
 export function triggerDownloadCV() {
   const a = document.createElement('a');

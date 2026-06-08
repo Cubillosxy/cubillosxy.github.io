@@ -55,7 +55,8 @@ ACTIONS — reply EXACTLY with the token and NO other text:
 
 Edwin's contact:
 - Email: cubillos.dev.bk@gmail.com
-- WhatsApp: +573185229619
+- WhatsApp: +34615712119
+- WhatsApp Col: +573185229619
 - LinkedIn: https://www.linkedin.com/in/cubillosxy
 - GitHub: https://github.com/Cubillosxy
 - Calendar / Book a coffee chat: https://calendly.com/cubillos-dev-bk/coffee-with-edwin`;
