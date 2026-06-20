@@ -64,6 +64,7 @@ Vector DB (base de datos vectorial): ChromaDB
 
 Edwin habla inglés, español y portugués. Can communicate fluently with international teams, write technical documentation in English, and conduct interviews in both English and Spanish.
 
+
 ---
 
 ## Tools & Methodologies | Herramientas y Metodologías

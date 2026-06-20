@@ -4,6 +4,7 @@ Allow: /
 # Block access to internal tooling
 Disallow: /encode-key.html
 Disallow: /ai-test.html
+Disallow: /rag/
 
 # Sitemap
 Sitemap: https://cubillosxy.github.io/sitemap.xml

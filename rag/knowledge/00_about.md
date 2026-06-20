@@ -2,7 +2,8 @@
 
 Edwin Cubillos (also known as Cubillosxy online) is a Senior Software Engineer and AI Architect based in Seville, Spain, working fully remote worldwide (available to work remotely from anywhere). He has over a decade of professional experience building high-scale, production-grade systems for global technology leaders.
 
-Edwin is bilingual in English and Spanish and speaks Portuguese at a professional level. He is passionate about the intersection of robust backend engineering and Generative AI.
+Edwin is Trilingual, speaking English, Spanish and Portuguese. He is passionate about the intersection of robust backend engineering and Generative AI.
+
 
 ## Philosophy — Vibe Coding
 
