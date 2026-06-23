@@ -1025,52 +1025,167 @@
     <div class="container">
       <p class="section-title">What I Can Do For You</p>
       <h2 class="section-heading">AI Services</h2>
-      <div class="services-grid">
-
-        <div class="service-card fade-in">
-          <span class="service-card-icon">🧠</span>
-          <h3 class="service-card-title">AI Strategy & Consulting</h3>
-          <p class="service-card-subtitle">Consultoría y Estrategia de AI</p>
-          <p class="service-card-desc">
-            AI readiness assessment, use case identification, and roadmap design.
-            I help companies understand where AI can deliver the highest ROI and build
-            a pragmatic adoption plan.
-          </p>
+      <div class="services-showcase">
+        <!-- Navigation Sidebar / Tabs -->
+        <div class="services-tabs-nav">
+          <button class="service-tab-btn active" data-slide="0">
+            <span class="tab-icon">🧠</span>
+            <div class="tab-meta">
+              <span class="tab-title">AI Strategy & Consulting</span>
+              <span class="tab-subtitle">Consultoría y Estrategia</span>
+            </div>
+            <span class="tab-indicator-bar"></span>
+          </button>
+          <button class="service-tab-btn" data-slide="1">
+            <span class="tab-icon">🔗</span>
+            <div class="tab-meta">
+              <span class="tab-title">AI Integration for Business</span>
+              <span class="tab-subtitle">Integración de AI para Empresas</span>
+            </div>
+            <span class="tab-indicator-bar"></span>
+          </button>
+          <button class="service-tab-btn" data-slide="2">
+            <span class="tab-icon">📚</span>
+            <div class="tab-meta">
+              <span class="tab-title">RAG Systems & KB</span>
+              <span class="tab-subtitle">Sistemas RAG y Conocimiento</span>
+            </div>
+            <span class="tab-indicator-bar"></span>
+          </button>
+          <button class="service-tab-btn" data-slide="3">
+            <span class="tab-icon">🚀</span>
+            <div class="tab-meta">
+              <span class="tab-title">Custom LLMs & Agents</span>
+              <span class="tab-subtitle">Soluciones LLM y Agentes</span>
+            </div>
+            <span class="tab-indicator-bar"></span>
+          </button>
         </div>
 
-        <div class="service-card fade-in">
-          <span class="service-card-icon">🔗</span>
-          <h3 class="service-card-title">AI Integration for Business</h3>
-          <p class="service-card-subtitle">Integración de AI para Empresas</p>
-          <p class="service-card-desc">
-            Seamless integration of AI capabilities into your existing products and workflows.
-            From automating customer support to intelligent document processing — production-ready
-            solutions, not demos.
-          </p>
-        </div>
+        <!-- Showcase Card Display -->
+        <div class="services-display-card">
+          <!-- Slide Container -->
+          <div class="services-slides-container">
+            
+            <!-- Slide 0 -->
+            <div class="service-showcase-slide active" data-index="0">
+              <div class="slide-header">
+                <div class="slide-icon-wrap">
+                  <span class="slide-icon">🧠</span>
+                </div>
+                <div class="slide-titles">
+                  <h3 class="slide-title">AI Strategy & Consulting</h3>
+                  <p class="slide-subtitle">Estrategia y Consultoría de Inteligencia Artificial</p>
+                </div>
+              </div>
+              <p class="slide-desc">
+                AI readiness assessment, use case identification, and technology roadmap design.
+                I help companies understand where AI can deliver the highest ROI and build a pragmatic, risk-aware adoption plan.
+              </p>
+              <div class="slide-deliverables">
+                <h4 class="deliverables-title">Key Deliverables / Resultados Clave:</h4>
+                <ul class="deliverables-list">
+                  <li><span class="check-icon">✓</span> <strong>AI Readiness Audit:</strong> Assessment of your data infrastructure and capabilities.</li>
+                  <li><span class="check-icon">✓</span> <strong>Use Case Matrix:</strong> Analysis of ROI, complexity, and priority for potential AI projects.</li>
+                  <li><span class="check-icon">✓</span> <strong>Integration Roadmap:</strong> Detailed architecture and timeline for execution.</li>
+                </ul>
+              </div>
+            </div>
 
-        <div class="service-card fade-in">
-          <span class="service-card-icon">📚</span>
-          <h3 class="service-card-title">RAG Systems & Knowledge Bases</h3>
-          <p class="service-card-subtitle">Sistemas RAG y Bases de Conocimiento</p>
-          <p class="service-card-desc">
-            Custom RAG pipelines that connect LLMs to your proprietary data.
-            Your team gets accurate, context-aware answers from your own documents,
-            databases, and knowledge repositories.
-          </p>
-        </div>
+            <!-- Slide 1 -->
+            <div class="service-showcase-slide" data-index="1">
+              <div class="slide-header">
+                <div class="slide-icon-wrap">
+                  <span class="slide-icon">🔗</span>
+                </div>
+                <div class="slide-titles">
+                  <h3 class="slide-title">AI Integration for Business</h3>
+                  <p class="slide-subtitle">Integración de AI para Procesos y Productos</p>
+                </div>
+              </div>
+              <p class="slide-desc">
+                Seamless integration of AI capabilities into your existing products, software architectures, and team workflows.
+                From automating customer support to intelligent document processing — built for production stability.
+              </p>
+              <div class="slide-deliverables">
+                <h4 class="deliverables-title">Key Deliverables / Resultados Clave:</h4>
+                <ul class="deliverables-list">
+                  <li><span class="check-icon">✓</span> <strong>Workflow Automation:</strong> AI bots integrated with Slack, WhatsApp, or CRM platforms.</li>
+                  <li><span class="check-icon">✓</span> <strong>Custom APIs:</strong> Secure, optimized endpoints connecting your software to LLMs.</li>
+                  <li><span class="check-icon">✓</span> <strong>Document Processing:</strong> Automated extraction and analysis from PDFs, receipts, and emails.</li>
+                </ul>
+              </div>
+            </div>
 
-        <div class="service-card fade-in">
-          <span class="service-card-icon">🚀</span>
-          <h3 class="service-card-title">Custom LLM Solutions & AI Agents</h3>
-          <p class="service-card-subtitle">Soluciones LLM y Agentes de AI Personalizados</p>
-          <p class="service-card-desc">
-            End-to-end development of LLM-powered applications and autonomous AI agents.
-            Built with LangChain, OpenAI, Anthropic, and Amazon Bedrock —
-            deployed on scalable cloud infrastructure.
-          </p>
-        </div>
+            <!-- Slide 2 -->
+            <div class="service-showcase-slide" data-index="2">
+              <div class="slide-header">
+                <div class="slide-icon-wrap">
+                  <span class="slide-icon">📚</span>
+                </div>
+                <div class="slide-titles">
+                  <h3 class="slide-title">RAG Systems & Knowledge Bases</h3>
+                  <p class="slide-subtitle">Sistemas RAG y Gestión de Conocimiento Corporativo</p>
+                </div>
+              </div>
+              <p class="slide-desc">
+                Custom Retrieval-Augmented Generation (RAG) pipelines that securely connect LLMs to your company's proprietary data.
+                Get accurate, context-aware answers from your internal documents, wikis, databases, and files.
+              </p>
+              <div class="slide-deliverables">
+                <h4 class="deliverables-title">Key Deliverables / Resultados Clave:</h4>
+                <ul class="deliverables-list">
+                  <li><span class="check-icon">✓</span> <strong>Secure Semantic Search:</strong> Vector databases (Pinecone, pgvector) with hybrid retrieval.</li>
+                  <li><span class="check-icon">✓</span> <strong>Proprietary QA System:</strong> LLM assistant that answers questions using only your documents.</li>
+                  <li><span class="check-icon">✓</span> <strong>Source Citations:</strong> Full transparency with citations linking back to original documents.</li>
+                </ul>
+              </div>
+            </div>
 
+            <!-- Slide 3 -->
+            <div class="service-showcase-slide" data-index="3">
+              <div class="slide-header">
+                <div class="slide-icon-wrap">
+                  <span class="slide-icon">🚀</span>
+                </div>
+                <div class="slide-titles">
+                  <h3 class="slide-title">Custom LLMs & AI Agents</h3>
+                  <p class="slide-subtitle">Soluciones LLM y Agentes Autónomos a Medida</p>
+                </div>
+              </div>
+              <p class="slide-desc">
+                End-to-end development of custom LLM applications, advanced prompt engineering, and multi-agent systems.
+                Built with LangChain, OpenAI, Claude, and Amazon Bedrock, deployed on scalable, secure cloud infrastructure.
+              </p>
+              <div class="slide-deliverables">
+                <h4 class="deliverables-title">Key Deliverables / Resultados Clave:</h4>
+                <ul class="deliverables-list">
+                  <li><span class="check-icon">✓</span> <strong>Autonomous Agents:</strong> AI that can use search, write code, and take actions.</li>
+                  <li><span class="check-icon">✓</span> <strong>Prompt Engineering:</strong> Optimizations for cost, accuracy, latency, and security.</li>
+                  <li><span class="check-icon">✓</span> <strong>Scalable Backend:</strong> High-performance server infrastructure (Go/Python) with monitoring.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Carousel Controls -->
+          <div class="showcase-controls">
+            <button class="showcase-arrow prev-btn" aria-label="Previous Slide">←</button>
+            <div class="showcase-dots">
+              <span class="showcase-dot active" data-slide="0"></span>
+              <span class="showcase-dot" data-slide="1"></span>
+              <span class="showcase-dot" data-slide="2"></span>
+              <span class="showcase-dot" data-slide="3"></span>
+            </div>
+            <button class="showcase-arrow next-btn" aria-label="Next Slide">→</button>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="showcase-progress">
+            <div class="showcase-progress-bar"></div>
+          </div>
+        </div>
       </div>
 
       <div class="services-cta">
@@ -1093,88 +1208,195 @@
     <div class="container">
       <p class="section-title">Common Questions</p>
       <h2 class="section-heading">FAQ</h2>
-      <div class="faq-list">
-
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <button class="faq-question" aria-expanded="false">
-            <span itemprop="name">How can I integrate AI into my business in Spain or Colombia?</span>
-            <span class="faq-chevron">▼</span>
-          </button>
-          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <div class="faq-answer-inner" itemprop="text">
-              I help businesses adopt AI through a proven process: first an AI readiness assessment,
-              then identifying high-impact use cases (customer support automation, document processing,
-              data analysis), followed by building production-ready solutions using RAG systems, LLMs,
-              and AI agents. I work with companies in Sevilla, across Spain, and in Colombia both
-              remotely and on-site.
+      <div class="faq-showcase">
+        <!-- FAQ Tabs Selectors -->
+        <div class="faq-tabs-nav">
+          <button class="faq-tab-btn active" data-slide="0">
+            <span class="faq-tab-icon">💼</span>
+            <div class="faq-tab-meta">
+              <span class="faq-tab-title">AI Integration (EN)</span>
+              <span class="faq-tab-subtitle">How to adopt AI in Spain/Colombia</span>
             </div>
-          </div>
+            <span class="faq-tab-indicator-bar"></span>
+          </button>
+          <button class="faq-tab-btn" data-slide="1">
+            <span class="faq-tab-icon">🏢</span>
+            <div class="faq-tab-meta">
+              <span class="faq-tab-title">Integración de AI (ES)</span>
+              <span class="faq-tab-subtitle">Cómo integrar AI en tu empresa</span>
+            </div>
+            <span class="faq-tab-indicator-bar"></span>
+          </button>
+          <button class="faq-tab-btn" data-slide="2">
+            <span class="faq-tab-icon">📚</span>
+            <div class="faq-tab-meta">
+              <span class="faq-tab-title">What is RAG?</span>
+              <span class="faq-tab-subtitle">Connecting LLMs to corporate data</span>
+            </div>
+            <span class="faq-tab-indicator-bar"></span>
+          </button>
+          <button class="faq-tab-btn" data-slide="3">
+            <span class="faq-tab-icon">💰</span>
+            <div class="faq-tab-meta">
+              <span class="faq-tab-title">AI Engineer Cost (ES)</span>
+              <span class="faq-tab-subtitle">Coste de contratar consultoría AI</span>
+            </div>
+            <span class="faq-tab-indicator-bar"></span>
+          </button>
+          <button class="faq-tab-btn" data-slide="4">
+            <span class="faq-tab-icon">🔬</span>
+            <div class="faq-tab-meta">
+              <span class="faq-tab-title">AI Engineer vs Data Scientist</span>
+              <span class="faq-tab-subtitle">What is the key difference?</span>
+            </div>
+            <span class="faq-tab-indicator-bar"></span>
+          </button>
         </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <button class="faq-question" aria-expanded="false">
-            <span itemprop="name">¿Cómo puedo integrar inteligencia artificial en mi empresa?</span>
-            <span class="faq-chevron">▼</span>
-          </button>
-          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <div class="faq-answer-inner" itemprop="text">
-              Ofrezco consultoría especializada en adopción de AI para empresas. El proceso incluye:
-              evaluación de madurez tecnológica, identificación de casos de uso de alto impacto
-              (automatización de atención al cliente, procesamiento de documentos, análisis de datos),
-              y desarrollo de soluciones productivas con sistemas RAG, LLMs y agentes de AI.
-              Trabajo con empresas en Sevilla, España y Colombia.
-            </div>
-          </div>
-        </div>
+        <!-- FAQ Display Card (Right side) -->
+        <div class="faq-display-card">
+          <div class="faq-slides-container">
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <button class="faq-question" aria-expanded="false">
-            <span itemprop="name">What is a RAG system and how can it help my business?</span>
-            <span class="faq-chevron">▼</span>
-          </button>
-          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <div class="faq-answer-inner" itemprop="text">
-              RAG (Retrieval-Augmented Generation) is a technique that combines your company's
-              proprietary data with large language models (LLMs) like GPT-4 or Claude. Instead of
-              generic AI responses, a RAG system searches your documents, databases, or knowledge
-              bases and generates accurate, context-specific answers. Common use cases include
-              intelligent customer support bots, internal knowledge assistants, and automated
-              document analysis.
+            <!-- Slide 0 -->
+            <div class="faq-showcase-slide active" data-index="0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <div class="faq-slide-header">
+                <div class="faq-slide-icon-wrap">
+                  <span class="faq-slide-icon">💼</span>
+                </div>
+                <div class="faq-slide-titles">
+                  <h3 class="faq-slide-title" itemprop="name">How can I integrate AI into my business in Spain or Colombia?</h3>
+                  <p class="faq-slide-subtitle">AI Adoption Strategy</p>
+                </div>
+              </div>
+              <div class="faq-slide-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div class="faq-answer-content" itemprop="text">
+                  <p class="faq-answer-intro">I help businesses adopt AI through a proven, low-risk process designed to deliver clear return on investment:</p>
+                  <ul class="faq-bullet-list">
+                    <li><strong>AI Readiness Assessment:</strong> Analyzing your data pipelines, tech stack, and resource availability.</li>
+                    <li><strong>Use Case Identification:</strong> Finding high-impact areas (e.g. automating support, data extraction, internal knowledge search).</li>
+                    <li><strong>Production MVP:</strong> Building a production-ready solution within weeks (RAG systems, LLM endpoints, AI agents).</li>
+                  </ul>
+                  <p class="faq-answer-footer">I work with companies in Sevilla, Spain, and Colombia remotely as well as on-site.</p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <button class="faq-question" aria-expanded="false">
-            <span itemprop="name">¿Cuánto cuesta contratar un ingeniero de AI?</span>
-            <span class="faq-chevron">▼</span>
-          </button>
-          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <div class="faq-answer-inner" itemprop="text">
-              El costo varía según el alcance del proyecto. Ofrezco consultoría por hora,
-              proyectos a precio fijo, y contratos de retención mensual. Un proyecto típico
-              de integración de AI puede ir desde un MVP de 2-4 semanas hasta soluciones
-              empresariales completas. Contacta para una evaluación gratuita de tu caso de uso.
+            <!-- Slide 1 -->
+            <div class="faq-showcase-slide" data-index="1" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <div class="faq-slide-header">
+                <div class="faq-slide-icon-wrap">
+                  <span class="faq-slide-icon">🏢</span>
+                </div>
+                <div class="faq-slide-titles">
+                  <h3 class="faq-slide-title" itemprop="name">¿Cómo puedo integrar inteligencia artificial en mi empresa?</h3>
+                  <p class="faq-slide-subtitle">Estrategia de Adopción de AI</p>
+                </div>
+              </div>
+              <div class="faq-slide-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div class="faq-answer-content" itemprop="text">
+                  <p class="faq-answer-intro">Ofrezco consultoría especializada en adopción de AI para empresas a través de un proceso estructurado:</p>
+                  <ul class="faq-bullet-list">
+                    <li><strong>Evaluación de madurez tecnológica:</strong> Análisis de tus sistemas de datos actuales.</li>
+                    <li><strong>Identificación de casos de uso:</strong> Identificar procesos automatizables de alto impacto (atención al cliente, procesamiento de documentos, análisis de datos).</li>
+                    <li><strong>Desarrollo productivo:</strong> Construcción e integración de sistemas RAG, LLMs y agentes de AI.</li>
+                  </ul>
+                  <p class="faq-answer-footer">Trabajo con empresas en Sevilla, España y Colombia de forma remota y presencial.</p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <button class="faq-question" aria-expanded="false">
-            <span itemprop="name">What is the difference between an AI Engineer and a Data Scientist?</span>
-            <span class="faq-chevron">▼</span>
-          </button>
-          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <div class="faq-answer-inner" itemprop="text">
-              An AI Engineer focuses on building production-ready AI systems — deploying LLMs,
-              building RAG pipelines, creating AI agents, and integrating AI into existing software
-              architectures. A Data Scientist focuses more on statistical analysis, model training,
-              and deriving insights from data. As an AI Engineer, I specialize in taking AI from
-              prototype to production at scale.
+            <!-- Slide 2 -->
+            <div class="faq-showcase-slide" data-index="2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <div class="faq-slide-header">
+                <div class="faq-slide-icon-wrap">
+                  <span class="faq-slide-icon">📚</span>
+                </div>
+                <div class="faq-slide-titles">
+                  <h3 class="faq-slide-title" itemprop="name">What is a RAG system and how can it help my business?</h3>
+                  <p class="faq-slide-subtitle">Retrieval-Augmented Generation Explained</p>
+                </div>
+              </div>
+              <div class="faq-slide-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div class="faq-answer-content" itemprop="text">
+                  <p class="faq-answer-intro">RAG (Retrieval-Augmented Generation) is a technique that securely connects your company's proprietary data with Large Language Models (LLMs) like GPT-4 or Claude:</p>
+                  <ul class="faq-bullet-list">
+                    <li><strong>No Hallucinations:</strong> Instead of guessing, the AI queries your documents, databases, or knowledge bases first.</li>
+                    <li><strong>Strict Context:</strong> The model generates responses based exclusively on the retrieved context, ensuring high accuracy.</li>
+                    <li><strong>Source Citations:</strong> Answers come with direct links/citations to original documents for transparency.</li>
+                  </ul>
+                  <p class="faq-answer-footer">Ideal for customer support bots, internal research assistants, and automated document analysis.</p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
+            <!-- Slide 3 -->
+            <div class="faq-showcase-slide" data-index="3" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <div class="faq-slide-header">
+                <div class="faq-slide-icon-wrap">
+                  <span class="faq-slide-icon">💰</span>
+                </div>
+                <div class="faq-slide-titles">
+                  <h3 class="faq-slide-title" itemprop="name">¿Cuánto cuesta contratar un ingeniero de AI?</h3>
+                  <p class="faq-slide-subtitle">Modelos de Tarifas de Consultoría</p>
+                </div>
+              </div>
+              <div class="faq-slide-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div class="faq-answer-content" itemprop="text">
+                  <p class="faq-answer-intro">El costo varía dependiendo del alcance, complejidad y duración del proyecto. Ofrezco tres modelos principales:</p>
+                  <ul class="faq-bullet-list">
+                    <li><strong>Consultoría por horas / Bolsa de horas:</strong> Ideal para asesorías, mentorías o revisiones técnicas puntuales.</li>
+                    <li><strong>Proyectos a precio cerrado:</strong> Ideal para MVPs delimitados (ej. un bot de RAG personalizado implementado en 3 semanas).</li>
+                    <li><strong>Contrato mensual (Retainer):</strong> Para empresas que buscan un soporte técnico continuo y desarrollo constante de soluciones de AI.</li>
+                  </ul>
+                  <p class="faq-answer-footer">Contáctame para recibir una evaluación gratuita de tu caso de uso y un presupuesto a medida.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="faq-showcase-slide" data-index="4" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <div class="faq-slide-header">
+                <div class="faq-slide-icon-wrap">
+                  <span class="faq-slide-icon">🔬</span>
+                </div>
+                <div class="faq-slide-titles">
+                  <h3 class="faq-slide-title" itemprop="name">What is the difference between an AI Engineer and a Data Scientist?</h3>
+                  <p class="faq-slide-subtitle">Role Specializations</p>
+                </div>
+              </div>
+              <div class="faq-slide-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div class="faq-answer-content" itemprop="text">
+                  <p class="faq-answer-intro">While both work with artificial intelligence, their core focuses and deliverables differ substantially:</p>
+                  <ul class="faq-bullet-list">
+                    <li><strong>AI Engineer (My Focus):</strong> Focuses on building production-ready AI systems. Integrating LLMs, deploying vector databases, orchestrating multi-agent systems, writing robust backend services (Python/Go), and embedding AI within existing applications.</li>
+                    <li><strong>Data Scientist:</strong> Focuses on statistical analysis, data cleaning, exploratory research, training custom machine learning models (regression, classification), and uncovering trends in large datasets.</li>
+                  </ul>
+                  <p class="faq-answer-footer">Essentially: A Data Scientist uncovers the insights; an AI Engineer builds and deploys the scalable software product.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- FAQ Carousel Controls -->
+          <div class="faq-showcase-controls">
+            <button class="faq-showcase-arrow faq-prev-btn" aria-label="Previous Slide">←</button>
+            <div class="faq-showcase-dots">
+              <span class="faq-showcase-dot active" data-slide="0"></span>
+              <span class="faq-showcase-dot" data-slide="1"></span>
+              <span class="faq-showcase-dot" data-slide="2"></span>
+              <span class="faq-showcase-dot" data-slide="3"></span>
+              <span class="faq-showcase-dot" data-slide="4"></span>
+            </div>
+            <button class="faq-showcase-arrow faq-next-btn" aria-label="Next Slide">→</button>
+          </div>
+
+          <!-- FAQ Progress Bar -->
+          <div class="faq-showcase-progress">
+            <div class="faq-showcase-progress-bar"></div>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
@@ -1774,25 +1996,260 @@
     });
   </script>
 
-  <!-- FAQ Accordion Script -->
+  <!-- Services Showcase Slider Script -->
   <script>
-    document.querySelectorAll('.faq-question').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.closest('.faq-item');
-        const isOpen = item.classList.contains('open');
+    document.addEventListener('DOMContentLoaded', () => {
+      const showcase = document.querySelector('.services-showcase');
+      if (!showcase) return;
 
-        // Close all others
-        document.querySelectorAll('.faq-item.open').forEach(openItem => {
-          if (openItem !== item) {
-            openItem.classList.remove('open');
-            openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-          }
+      const tabs = showcase.querySelectorAll('.service-tab-btn');
+      const slides = showcase.querySelectorAll('.service-showcase-slide');
+      const dots = showcase.querySelectorAll('.showcase-dot');
+      const prevBtn = showcase.querySelector('.prev-btn');
+      const nextBtn = showcase.querySelector('.next-btn');
+      const progressBar = showcase.querySelector('.showcase-progress-bar');
+
+      let currentIndex = 0;
+      const slideDuration = 7000; // 7 seconds per slide
+      let startTime = null;
+      let elapsedTime = 0;
+      let animationFrameId = null;
+      let isPaused = false;
+
+      function updateShowcase(index) {
+        currentIndex = index;
+        
+        // Update tabs active state
+        tabs.forEach((tab, idx) => {
+          tab.classList.toggle('active', idx === index);
         });
 
-        // Toggle current
-        item.classList.toggle('open', !isOpen);
-        btn.setAttribute('aria-expanded', !isOpen);
+        // Update slides active state
+        slides.forEach((slide, idx) => {
+          slide.classList.toggle('active', idx === index);
+        });
+
+        // Update dots active state
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle('active', idx === index);
+        });
+
+        // Reset progress tracking
+        elapsedTime = 0;
+        startTime = null;
+      }
+
+      function nextSlide() {
+        let nextIndex = (currentIndex + 1) % slides.length;
+        updateShowcase(nextIndex);
+      }
+
+      function prevSlide() {
+        let prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateShowcase(prevIndex);
+      }
+
+      // Progress bar animation loop using requestAnimationFrame
+      function animateProgress(timestamp) {
+        if (!startTime) {
+          startTime = timestamp - elapsedTime;
+        }
+
+        if (!isPaused) {
+          elapsedTime = timestamp - startTime;
+          const percentage = Math.min((elapsedTime / slideDuration) * 100, 100);
+          progressBar.style.width = percentage + '%';
+
+          if (elapsedTime >= slideDuration) {
+            nextSlide();
+          }
+        } else {
+          // If paused, keep offsetting start time so progress stays frozen
+          startTime = timestamp - elapsedTime;
+        }
+
+        animationFrameId = requestAnimationFrame(animateProgress);
+      }
+
+      // Event Listeners
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+          updateShowcase(index);
+        });
       });
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          updateShowcase(index);
+        });
+      });
+
+      if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+      if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+      // Pause on hover
+      showcase.addEventListener('mouseenter', () => {
+        isPaused = true;
+      });
+
+      showcase.addEventListener('mouseleave', () => {
+        isPaused = false;
+      });
+
+      // Swipe support for mobile devices
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      showcase.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        isPaused = true;
+      }, { passive: true });
+
+      showcase.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        isPaused = false;
+        handleSwipe();
+      }, { passive: true });
+
+      function handleSwipe() {
+        const threshold = 50; // swipe threshold in pixels
+        if (touchStartX - touchEndX > threshold) {
+          nextSlide(); // Swiped left
+        } else if (touchEndX - touchStartX > threshold) {
+          prevSlide(); // Swiped right
+        }
+      }
+
+      // Start animation loop
+      animationFrameId = requestAnimationFrame(animateProgress);
+    });
+  </script>
+
+  <!-- FAQ Showcase Slider Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const showcase = document.querySelector('.faq-showcase');
+      if (!showcase) return;
+
+      const tabs = showcase.querySelectorAll('.faq-tab-btn');
+      const slides = showcase.querySelectorAll('.faq-showcase-slide');
+      const dots = showcase.querySelectorAll('.faq-showcase-dot');
+      const prevBtn = showcase.querySelector('.faq-prev-btn');
+      const nextBtn = showcase.querySelector('.faq-next-btn');
+      const progressBar = showcase.querySelector('.faq-showcase-progress-bar');
+
+      let currentIndex = 0;
+      const slideDuration = 8000; // 8 seconds per slide for FAQ
+      let startTime = null;
+      let elapsedTime = 0;
+      let animationFrameId = null;
+      let isPaused = false;
+
+      function updateShowcase(index) {
+        currentIndex = index;
+        
+        // Update tabs active state
+        tabs.forEach((tab, idx) => {
+          tab.classList.toggle('active', idx === index);
+        });
+
+        // Update slides active state
+        slides.forEach((slide, idx) => {
+          slide.classList.toggle('active', idx === index);
+        });
+
+        // Update dots active state
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle('active', idx === index);
+        });
+
+        // Reset progress tracking
+        elapsedTime = 0;
+        startTime = null;
+      }
+
+      function nextSlide() {
+        let nextIndex = (currentIndex + 1) % slides.length;
+        updateShowcase(nextIndex);
+      }
+
+      function prevSlide() {
+        let prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateShowcase(prevIndex);
+      }
+
+      // Progress bar animation loop
+      function animateProgress(timestamp) {
+        if (!startTime) {
+          startTime = timestamp - elapsedTime;
+        }
+
+        if (!isPaused) {
+          elapsedTime = timestamp - startTime;
+          const percentage = Math.min((elapsedTime / slideDuration) * 100, 100);
+          progressBar.style.width = percentage + '%';
+
+          if (elapsedTime >= slideDuration) {
+            nextSlide();
+          }
+        } else {
+          startTime = timestamp - elapsedTime;
+        }
+
+        animationFrameId = requestAnimationFrame(animateProgress);
+      }
+
+      // Event Listeners
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+          updateShowcase(index);
+        });
+      });
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          updateShowcase(index);
+        });
+      });
+
+      if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+      if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+      // Pause on hover
+      showcase.addEventListener('mouseenter', () => {
+        isPaused = true;
+      });
+
+      showcase.addEventListener('mouseleave', () => {
+        isPaused = false;
+      });
+
+      // Swipe support for mobile
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      showcase.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        isPaused = true;
+      }, { passive: true });
+
+      showcase.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        isPaused = false;
+        handleSwipe();
+      }, { passive: true });
+
+      function handleSwipe() {
+        const threshold = 50;
+        if (touchStartX - touchEndX > threshold) {
+          nextSlide();
+        } else if (touchEndX - touchStartX > threshold) {
+          prevSlide();
+        }
+      }
+
+      // Start animation loop
+      animationFrameId = requestAnimationFrame(animateProgress);
     });
   </script>
 </body>
