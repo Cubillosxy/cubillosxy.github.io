@@ -136,7 +136,7 @@ class ChatBotUI {
   }
 
   initWorker() {
-    this.appendMessage('assistant', "Hello! I am Edwin's AI Assistant powered by Llama 3. How can I help you today?");
+    this.appendMessage('assistant', "Hello! I am Edwin's AI Assistant powered by gpt-oss-20b. How can I help you today?");
 
     try {
       this.worker = new Worker('js/chatbot/worker.js', { type: 'module' });

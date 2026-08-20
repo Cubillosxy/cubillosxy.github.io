@@ -4,7 +4,7 @@ import { topK } from '../rag/retriever.js';
 // Reconstruct key at runtime — never stored as a single plain string
 function _rk() { return atob(GROK_TIME_STR) + atob(GROK_TIME_STR_2) + GROK_TAIL + 'Ui'; }
 
-const GROQ_MODEL = 'llama-3.1-8b-instant';
+const GROQ_MODEL = 'openai/gpt-oss-20b';
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 
 // ── Rate Limiter Config ───────────────────────────────────────
