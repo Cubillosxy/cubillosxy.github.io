@@ -1,6 +1,6 @@
 # About Edwin Cubillos
 
-Edwin Cubillos (also known as Cubillosxy online) is a Senior Software Engineer and AI Architect based in Seville, Spain, working fully remote worldwide (available to work remotely from anywhere). He has over a decade of professional experience building high-scale, production-grade systems for global technology leaders.
+Edwin Cubillos (also known as Cubillosxy online) is a Senior Software Engineer and AI Architect based in Bogota, Colombia, working fully remote worldwide. He serves clients in Colombia, the United States, and Latin America. He has over a decade of professional experience building high-scale, production-grade systems for global technology leaders.
 
 Edwin is Trilingual, speaking English, Spanish and Portuguese. He is passionate about the intersection of robust backend engineering and Generative AI.
 
@@ -17,7 +17,7 @@ His career spans roles at Uber, Nokia, Mercado Libre, Services Steam, Axiacore, 
 
 ## Location & Availability
 
-- Based in Seville, Spain (available to work remotely from anywhere worldwide)
+- Based in Bogota, Colombia (available to work remotely from anywhere worldwide, with a focus on Colombia, the USA, and Latin America)
 - Open to fully remote positions worldwide
 - Available for new opportunities (as of 2026)
 - Preferred role types: Senior Software Engineer, AI Engineer, AI Architect, Principal Engineer, Team lead

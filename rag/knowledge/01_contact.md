@@ -5,15 +5,14 @@ Edwin Cubillos is available for new opportunities and welcomes messages from rec
 ## Direct Contact
 
 - **Email**: [EMAIL_ADDRESS]
-- **WhatsApp**: +34615712119 (Spain)
-- **WhatsApp_2**: +573185229619 (Colombia)
+- **WhatsApp**: +573185229619 (Colombia)
 - **LinkedIn**: https://www.linkedin.com/in/cubillosxy
 - **GitHub**: https://github.com/Cubillosxy
 - **Portfolio**: https://cubillosxy.github.io
 
 ## How to Reach Edwin
 
-The fastest ways to get in touch are WhatsApp and LinkedIn. For formal inquiries, email is preferred. Edwin is based in Seville, Spain (UTC+1/UTC+2) and works remotely from anywhere in the world. He typically responds within 24 hours.
+The fastest ways to get in touch are WhatsApp and LinkedIn. For formal inquiries, email is preferred. Edwin is based in Bogota, Colombia (UTC-5) and works remotely from anywhere in the world, with a focus on the USA, Colombia, and Latin America. He typically responds within 24 hours.
 
 ## Resume / CV
 

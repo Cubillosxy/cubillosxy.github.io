@@ -103,12 +103,12 @@ const EXPAND_ES = {
 
   // Location / Availability
   'disponible': ['available', 'opportunities', 'remote', 'open'],
-  'ubicacion': ['location', 'remote', 'sevilla', 'seville', 'spain', 'espana'],
-  'donde': ['location', 'where', 'based', 'sevilla', 'seville', 'spain', 'espana'],
-  'sevilla': ['seville', 'spain', 'espana', 'location', 'remote', 'anywhere'],
-  'seville': ['sevilla', 'spain', 'espana', 'location', 'remote', 'anywhere'],
-  'espana': ['spain', 'sevilla', 'seville', 'location', 'remote', 'anywhere'],
-  'spain': ['espana', 'sevilla', 'seville', 'location', 'remote', 'anywhere'],
+  'ubicacion': ['location', 'remote', 'colombia', 'bogota', 'usa', 'united', 'states', 'latam'],
+  'donde': ['location', 'where', 'based', 'colombia', 'bogota', 'usa', 'united', 'states', 'latam'],
+  'colombia': ['bogota', 'usa', 'united', 'states', 'eeuu', 'latam', 'location', 'remote', 'anywhere'],
+  'bogota': ['colombia', 'usa', 'united', 'states', 'eeuu', 'latam', 'location', 'remote', 'anywhere'],
+  'usa': ['eeuu', 'united', 'states', 'colombia', 'bogota', 'latam', 'location', 'remote', 'anywhere'],
+  'eeuu': ['usa', 'united', 'states', 'colombia', 'bogota', 'latam', 'location', 'remote', 'anywhere'],
   'remoto': ['remote', 'anywhere', 'worldwide', 'location'],
   'salario': ['salary', 'compensation'],
 
