@@ -1002,11 +1002,9 @@
       </div>
       <div class="news-tabs" id="newsTabs">
         <button class="news-tab active" data-feed="all">All</button>
-        <button class="news-tab" data-feed="openai">OpenAI</button>
         <button class="news-tab" data-feed="hf">HuggingFace</button>
         <button class="news-tab" data-feed="mit">MIT</button>
         <button class="news-tab" data-feed="bbc">BBC Tech</button>
-        <button class="news-tab" data-feed="gnews">Google AI</button>
         <button class="news-tab" data-feed="dlai">DL.AI</button>
       </div>
       <div class="news-panel-body" id="news-grid">
@@ -1616,11 +1614,9 @@
     (function () {
       const API = 'https://api.rss2json.com/v1/api.json?rss_url=';
       const feeds = [
-        { url: 'https://openai.com/blog/rss.xml', source: 'OpenAI', key: 'openai' },
         { url: 'https://huggingface.co/blog/feed.xml', source: 'HuggingFace', key: 'hf' },
         { url: 'https://www.technologyreview.com/topic/artificial-intelligence/feed', source: 'MIT', key: 'mit' },
-        { url: 'https://feeds.bbci.co.uk/news/technology/rss.xml', source: 'BBC Tech', key: 'bbc' },
-        { url: 'https://news.google.com/rss/search?q=artificial+intelligence&hl=en-US&gl=US&ceid=US:en', source: 'Google AI', key: 'gnews' }
+        { url: 'https://feeds.bbci.co.uk/news/technology/rss.xml', source: 'BBC Tech', key: 'bbc' }
       ];
 
       // DeepLearning.AI custom scraper (no RSS available)
